@@ -23,17 +23,9 @@ jQuery( document ).ready( function( $ ) {
   support = Modernizr.cssanimations;
 
 
-  document.addEventListener("DOMNodeInserted", function(event) {
-
-    
-  });
-
-
   $("#spaces-main").on("DOMNodeInserted",function(e){
-
+    
     if(e.target.tagName.includes('APP-')){
-      $pages = $main.find( 'section.page-section' );
-
       if(e.target.tagName.includes('APP-HOME')){
         console.log('target',e.target.tagName);
         $('.projects-slider ul').responsiveSlides({
@@ -48,8 +40,7 @@ jQuery( document ).ready( function( $ ) {
 
       hide_home();
       setTimeout(function() {
-        animate_home();
-        init();
+        animate_home();        
       }, 50);
 
     }
@@ -206,7 +197,7 @@ jQuery( document ).ready( function( $ ) {
    
   $('.vertical-menu > *').addClass('animated');
   
-  $('.showMenu').on( 'click', function() {    
+  /*$('.showMenu').on( 'click', function() {    
     toogle_menu();
     
     if( $(this).hasClass('fadeInRight') ){
@@ -221,7 +212,25 @@ jQuery( document ).ready( function( $ ) {
       $('.vertical-menu .form-item-search-block-form input').focus();
 
     }    
-  }); 
+  }); */
+
+  $(document).on('click','.displayMenu', function(){
+    console.log('entro')
+    toogle_menu();
+    
+    if( $(this).hasClass('fadeInRight') ){
+        $('.vertical-menu > *').removeClass('fadeInRight');
+    }else{
+      setTimeout(function() {
+        animate_menu();
+       }, 70);
+    }
+    
+    if( $(this).hasClass('search') ){
+      $('.vertical-menu .form-item-search-block-form input').focus();
+
+    }
+  })
   
   $('.vertical-menu').hover(    
     function() {
@@ -279,7 +288,7 @@ jQuery( document ).ready( function( $ ) {
       $page.data( 'originalClassList', $page.attr( 'class' ) );
     } );
 
-    $pages.eq( current ).addClass( 'page-section-current' );
+    //$pages.eq( current ).addClass( 'page-section-current' );
 
     $iterate.on( 'click', function() {
       var $pageindex = 0;

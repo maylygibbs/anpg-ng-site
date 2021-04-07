@@ -39,7 +39,7 @@
 
 /*--------------------- Menu --------------------*/
 .site-name {
-  font-size: 3em;
+  font-size: 2em;
 }
 .menu-row h2 {
   font-size: 2.75em; 
@@ -139,6 +139,7 @@
   cursor: pointer;
   z-index: 9;
 }
+
 .vertical-menu .remove {
   background: no-repeat url(../images/close.gif) 5px 6px;
   padding: 5px 14px;

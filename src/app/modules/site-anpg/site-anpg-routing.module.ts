@@ -4,6 +4,7 @@ import { UiSiteAnpgLayoutComponent } from '../commons-anpg/layouts/ui-site-anpg-
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -11,11 +12,13 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        data: {state: 'home'}
       },
       {
         path: 'about',
-        component: AboutComponent
+        component: AboutComponent,
+        data: {state: 'about'}
       }
     ]
   }
