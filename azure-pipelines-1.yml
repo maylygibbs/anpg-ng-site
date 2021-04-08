@@ -1,0 +1,41 @@
+trigger:
+  branches:
+    include:
+    - refs/heads/main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: windows-2019
+  steps:
+  - checkout: self
+  - task: NodeTool@0
+    displayName: Use Node 10.x
+    inputs:
+      versionSpec: 10.x
+  - task: Npm@1
+    displayName: install @angular/cli
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: install @angular/cli
+  - task: Npm@1
+    displayName: install @angular-devkit/build-angular
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: install @angular-devkit/build-angular
+  - task: Npm@1
+    displayName: npm build
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: run build
+  - task: AzureRmWebAppDeployment@4
+    displayName: 'Azure App Service Deploy: anpg-ng-site'
+    inputs:
+      ConnectedServiceName: 28f9cf77-e4fa-4d3f-a955-a3e78196f9a8
+      WebAppName: anpg-ng-site
+      Package: dist/angular-anpg-mobile-app
+      UseWebDeploy: true
+...
