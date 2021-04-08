@@ -38,6 +38,7 @@
 
 
 /*--------------------- Menu --------------------*/
+
 .site-name {
   font-size: 2em;
 }
@@ -243,7 +244,7 @@
   vertical-align: bottom;
 } 
 .metro-panel .space.twitter-feed-box div { 
-  padding-top: 0;
+  padding-top: 15px;
 }
 .metro-panel .space a {
   color: #FFF;
@@ -1162,6 +1163,13 @@ body.error404 a {
 .sad-smile {
   font-size: 6em;
   margin: 0;
+}
+
+
+/****************************************   commons css   **************************************/
+
+.content-title{
+  padding-top: 10px !important;
 }
 
 

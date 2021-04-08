@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UiSiteAnpgLayoutComponent } from '../commons-anpg/layouts/ui-site-anpg-layout/ui-site-anpg-layout.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { PacoteDadosComponent } from './components/pacote-dados/pacote-dados.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,11 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
         data: {state: 'about'}
+      },
+      {
+        path: 'pacotes',
+        component: PacoteDadosComponent,
+        data: {state: 'pacotes'}
       }
     ]
   }
