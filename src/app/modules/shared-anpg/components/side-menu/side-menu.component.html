@@ -16,26 +16,8 @@
     <br/>
     <div class="menu-menu-1-container">
        <ul id="menu-menu-1" class="menu-list">
-          <li>
-             <a href="index.html#home"><i class="fa-home fa"></i>Home</a>
-          </li>
-          <li>
-             <a href="index.html#Contact"><i class="fa-envelope fa color--117"></i>Contate nos</a>
-          </li>
-          <li>
-             <a href="index.html#Services"><i class="fa-puzzle-piece fa color--63"></i>Serviços</a>
-          </li>
-          <li>
-             <a href="index.html#Portfolio"><i class="fa-briefcase fa color--57"></i>Portfólio</a>
-          </li>
-          <li>
-             <a href="index.html#About"><i class="fa-comment fa color--60"></i>Sobre nós</a>
-          </li>
-          <li>
-             <a href="index.html#Blog"><i class="fa-comments-o fa color--41"></i>Blog</a>
-          </li>
-          <li>
-             <a href="index.html#Team"><i class="fa-users fa color--21"></i>Equipe</a>
+          <li *ngFor='let item of items'>
+             <a [routerLink]="item.href"><i [class]="item.class"></i>{{item.label}}</a>
           </li>
        </ul>
     </div>

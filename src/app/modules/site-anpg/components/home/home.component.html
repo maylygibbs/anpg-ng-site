@@ -20,8 +20,8 @@
                   <div class="row">
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-1'>
-                           <a routerLink='/anpg/about'>
-                              <span class='box-title'>Sobre nós</span>
+                           <a [routerLink]="items[0].href">
+                              <span class='box-title'>{{items[0].label}}</span>
                               <br />
                               <i class='fa-comment fa fa-4x'></i>
                            </a>
@@ -29,8 +29,8 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-2'>
-                           <a href='#Team'>
-                              <span class='box-title'>Equipe</span>
+                           <a [routerLink]="items[1].href">
+                              <span class='box-title'>{{items[1].label}}</span>
                               <br />
                               <i class='fa-users fa fa-4x'></i>
                            </a>
@@ -38,7 +38,7 @@
                      </div>
                      <div class='twelve large-12 columns space testimonials-box medium'>
                         <div class='color-3'>
-                           <span class='box-title anim'>Testemunhos</span>
+                           <span class='box-title anim'>{{items[2].label}}</span>
                            <ul class='testimonials'>
                               <li>
                                  <blockquote>
@@ -72,7 +72,7 @@
                         </div>
                      </div>
                      <div class='twelve large-12 columns space featured blog-box medium'>
-                        <div class='color-4'> <span class='box-title anim'>Postagens</span>
+                        <div class='color-4'> <span class='box-title anim'>{{items[3].label}}</span>
                            <span class='featured-image'>
                               <img width="400" height="400" src="assets/images/1.jpg" alt="some tile" />
                            </span>
@@ -87,8 +87,8 @@
                   <div class="row">
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-5'>
-                           <a href='https://www.facebook.com/'>
-                              <span class='box-title'>Facebook</span>
+                           <a [href]="items[4].href">
+                              <span class='box-title'>{{items[4].label}}</span>
                               <br />
                               <i class='fa-facebook fa fa-4x'></i>
                            </a>
@@ -96,8 +96,8 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-6'>
-                           <a href='https://twitter.com/'>
-                              <span class='box-title'>Twitter</span>
+                           <a [href]="items[5].href" >
+                              <span class='box-title'>{{items[5].label}}</span>
                               <br />
                               <i class='fa-twitter fa fa-4x'></i>
                            </a>
@@ -160,8 +160,8 @@
                   <div class="row">
                      <div class='twelve small-12 columns twitter-feed-box space'>
                         <div class='color-8'>
-                           <a routerLink='/anpg/pacotes'>
-                              <span class='box-title'>Pacotes de Dados</span>
+                           <a [routerLink]="items[6].href">
+                              <span class='box-title'>{{items[6].label}}</span>
                               <br />
                               <i class='fa-folder-open fa fa-4x'></i>
                            </a>
@@ -169,8 +169,8 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-9'>
-                           <a href='#Portfolio'>
-                              <span class='box-title'>Portfólio</span>
+                           <a [routerLink]="items[7].href">
+                              <span class='box-title'>{{items[7].label}}</span>
                               <br />
                               <i class='fa-briefcase fa fa-4x'></i>
                            </a>
@@ -178,7 +178,7 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-10'>
-                           <a href='#Contact'> <span class='box-title'>Contate nos</span>
+                           <a [routerLink]="items[8].href"> <span class='box-title'>{{items[8].label}}</span>
                               <br />
                               <i class='fa-envelope fa fa-4x'></i>
                            </a>
@@ -186,8 +186,8 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-11'>
-                           <a href='#Blog'>
-                              <span class='box-title'>Blog</span>
+                           <a [routerLink]="items[9].href">
+                              <span class='box-title'>{{items[9].label}}</span>
                               <br />
                               <i class='fa-comments-o fa fa-4x'></i>
                            </a>
@@ -195,8 +195,8 @@
                      </div>
                      <div class='six small-6 columns contact-box space'>
                         <div class='color-12'>
-                           <a href='#Services'>
-                              <span class='box-title'>Serviços</span>
+                           <a [routerLink]="items[10].href">
+                              <span class='box-title'>{{items[10].label}}</span>
                               <br />
                               <i class='fa-puzzle-piece fa fa-4x'></i>
                            </a>
@@ -207,7 +207,7 @@
                <div id="after-tiles" class="large-12 columns">
                </div>
             </div>
-            <div class="copyright">© 2021 Reditus All rights reserved.</div>
+            <div class="copyright">© 2021 ANPG All rights reserved.</div>
          </div>
       </div>
    </div>

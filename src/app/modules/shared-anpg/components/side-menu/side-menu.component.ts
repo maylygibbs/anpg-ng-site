@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Subscription} from 'rxjs';
+import { MenuService } from '../../../../core/services/menu.service';
+import { MenuItem } from '../../../../core/models/menu-item';
+import { menu as smenu} from '../../../site-anpg/utils/side-menu';
+
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  public items = new Array<MenuItem>();
+  private $items: Subscription;
+
+  constructor(private menuService: MenuService) { 
+    let item:Array<MenuItem> = smenu;
+    this.menuService.setSideMenu(smenu);
+  }
 
   ngOnInit(): void {
+    this.$items = this.menuService.getSideMenu().subscribe((items)=>{
+      this.items = items;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.$items) {
+      this.$items.unsubscribe();
+    }
   }
 
 }
