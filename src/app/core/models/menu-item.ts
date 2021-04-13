@@ -2,7 +2,7 @@ import { Model } from "./model";
 
 
 /**
- * MenuItem entity
+ * MenuItem model
  */
 export class MenuItem extends Model {
 

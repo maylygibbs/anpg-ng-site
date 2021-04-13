@@ -28,7 +28,7 @@ export const environment = {
     }
   },
   api: {
-    url: 'https://api.peygold.com/api',
+    url: 'https://anpgwebapipacotes.azurewebsites.net',
     avatarUrl: 'https://api.peygold.com'
   },
   api_notification: {

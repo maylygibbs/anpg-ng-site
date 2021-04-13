@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PacoteDados } from 'src/app/core/models/pacote-dados';
+import { PacotedadosService } from 'src/app/core/services/pacotedados.service';
 
 @Component({
   selector: 'app-pacote-dados',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacoteDadosComponent implements OnInit {
 
-  constructor() { }
+  public pacotesDados: PacoteDados;
+
+  constructor(private pacotesDadosService: PacotedadosService) { }
 
   ngOnInit(): void {
+    
+    this.pacotesDadosService.getAllPacotes().then(
+      (resp)=>{
+        console.log(JSON.parse(resp));
+      }
+    ).catch(
+      (error)=>{
+        console.log(error);
+      }
+    )
+
   }
 
 }
