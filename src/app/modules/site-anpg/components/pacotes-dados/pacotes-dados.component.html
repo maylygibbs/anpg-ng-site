@@ -1,0 +1,40 @@
+<section class="page-section Blog-page page-section-41 page-section-current">
+    <div class="row menu-row">
+        <div class="large-1 go-back">
+            <i class="fa-arrow-left fa icon-x back" routerLink="/"></i>
+        </div>
+        <div class="large-7 columns p-l-0 content-title">
+            <h1 class="site-name">
+                Pacotes de Dados
+            </h1>
+        </div>
+        <div class="large-4 columns menu-button text-right">
+            <a class="showMenu" routerLink="/"><i class="fa-home fa icon-x back"></i></a>
+            <a class="showMenu"><i class="fa-bars fa icon-x back"></i></a>
+            <a class="showMenu"><i class="fa-search fa icon-x back"></i></a>
+        </div>
+    </div>
+    <div class="row clear-fix">
+        <div class="row  blog-page">
+            <div class="view view-blog view-id-blog view-display-id-block view-dom-id-0c4bf026824ced108c3a32120e9abc56">
+                <div class="view-content">
+                    <!-- Poste -->
+                    <ul id="i-scroll" *ngIf="pacotes && pacotes.length>0" [ngClass]="{'large-block-grid-1':pacotes.length == 1, 'large-block-grid-2':pacotes.length == 2, 'large-block-grid-3':pacotes.length >= 3}" class="small-block-grid-1">
+                        <li *ngFor="let pacote of pacotes" class="">
+                            <article class="article">
+                                <a href="#" title="Cassettiera 3 cass noce">
+                                    <img class="article-image" width="800" height="380" [src]="pacote.imagemPacote" alt="some tile" />
+                                </a>
+                                <div class="post-body">
+                                    <h2><a href="#">{{pacote.nomePacote}}</a></h2>
+                                    <p class="wrapper-text-list-pacote">{{pacote.descricaoPacote}}</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <div class="more-link"></div>
+            </div>
+        </div>
+    </div>
+</section>

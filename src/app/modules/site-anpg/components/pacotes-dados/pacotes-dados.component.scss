@@ -1,0 +1,27 @@
+/* ELLIPSIS MULTILINEA */
+@mixin ellipsis-multiline($font-size, $line-height, $lines-to-show, $margin:"0") {
+    $height-calc: $font-size*$line-height*$lines-to-show;
+    display: block;
+    display: -webkit-box;
+    font-size: $font-size*1px;
+    line-height: $line-height;
+    max-height: ($height-calc + $margin)*1px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    text-align: justify;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+  
+    p:not(:first-of-type) {
+      display: none;
+    }
+  }
+
+
+  .wrapper-text-list-pacote{
+    p{
+      margin:0;
+    }
+    @include ellipsis-multiline(15,1.5,4,0);
+  }

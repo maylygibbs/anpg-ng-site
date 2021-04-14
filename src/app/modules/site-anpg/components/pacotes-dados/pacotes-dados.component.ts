@@ -4,23 +4,24 @@ import { PacotedadosService } from 'src/app/core/services/pacotedados.service';
 
 @Component({
   selector: 'app-pacote-dados',
-  templateUrl: './pacote-dados.component.html',
-  styleUrls: ['./pacote-dados.component.scss']
+  templateUrl: './pacotes-dados.component.html',
+  styleUrls: ['./pacotes-dados.component.scss']
 })
-export class PacoteDadosComponent implements OnInit {
+export class PacotesDadosComponent implements OnInit {
 
-  public pacotesDados: PacoteDados;
+  public pacotes: Array<PacoteDados>;
 
   constructor(private pacotesDadosService: PacotedadosService) { }
 
   ngOnInit(): void {
-    
+
     this.pacotesDadosService.getAllPacotes().then(
-      (resp)=>{
-        console.log(JSON.parse(resp));
+      (resp: Array<PacoteDados>) => {
+        this.pacotes = resp;
+        console.log(resp);
       }
     ).catch(
-      (error)=>{
+      (error) => {
         console.log(error);
       }
     )
