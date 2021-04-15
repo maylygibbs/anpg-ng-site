@@ -6,7 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { PacoteDadosDetalhesComponent } from './components/pacote-dados-detalhes/pacote-dados-detalhes.component';
 import { PacotesDadosComponent } from './components/pacotes-dados/pacotes-dados.component';
 
-
+/**
+ * Rutas para el modulo site publico
+ */
 const routes: Routes = [
   {
     path: '',
