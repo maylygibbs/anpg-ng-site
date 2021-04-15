@@ -1,3 +1,6 @@
+/**
+ * Integracion completa plantilla
+ */
 jQuery( document ).ready( function( $ ) {
 "use strict";
   
@@ -197,23 +200,6 @@ jQuery( document ).ready( function( $ ) {
    
   $('.vertical-menu > *').addClass('animated');
   
-  /*$('.showMenu').on( 'click', function() {    
-    toogle_menu();
-    
-    if( $(this).hasClass('fadeInRight') ){
-        $('.vertical-menu > *').removeClass('fadeInRight');
-    }else{
-      setTimeout(function() {
-        animate_menu();
-       }, 70);
-    }
-    
-    if( $(this).hasClass('search') ){
-      $('.vertical-menu .form-item-search-block-form input').focus();
-
-    }    
-  }); */
-
   $(document).on('click','.displayMenu', function(){
     console.log('entro')
     toogle_menu();
