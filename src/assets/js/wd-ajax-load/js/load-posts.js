@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
 	 */
 	$('.portfolio-item').click(function() {
 	    var that = this;
-	    
+	    debugger;
 	    $('body').css('cursor', 'wait');
 	    $(this).append('<div class="ajax-progress ajax-progress-throbber"><div class="throbber">&nbsp;</div></div>');
 	    

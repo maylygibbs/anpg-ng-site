@@ -16,13 +16,12 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   constructor(private router: Router) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(request).pipe(catchError( (error:HttpErrorResponse)=>{
-
+    console.log('HttpErrorInterceptor','interceptado');
+    return next.handle(request).pipe(catchError( (error:HttpErrorResponse)=>{  
+ 
       if (error.status === 404) {
         this.router.navigate(['/']);
       }
-
-
       return throwError(error);
 
     }));

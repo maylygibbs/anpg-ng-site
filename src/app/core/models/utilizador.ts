@@ -5,9 +5,10 @@ import { Model } from "./model";
 export class Utilizador extends Model {
 
 
+    public nomeUtilizador: string;
+    
     constructor(
-        public idUtilizador: number,
-        public nomeUtilizador: string
+        public idUtilizador?: number
     ) {
         super()
     }

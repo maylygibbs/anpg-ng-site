@@ -229,8 +229,8 @@ article.type-post .field-name-field-blog-tags .links > li a {
 /*-------------- Portfolio Page ----------------------*/
 #project-info {
   background: rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
-  padding: 20px 20px 30px;
+  margin: 20px;
+  padding: 30px;
   position: relative;
 }
 #project-info .back {

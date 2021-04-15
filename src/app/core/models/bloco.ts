@@ -9,21 +9,21 @@ import { Utilizador } from "./utilizador";
  */
 export class Bloco extends Model{
 
-    constructor(
-        public IdBloco:number,
-        public BaciaID:Bacia,
-        public NomeBloco: string,
-        public descripBloco: string,
-        public onshore: boolean,
-        public observacoes: string,
-        public dataCriacao: Date,
-        public criadoPor: Utilizador,
-        public dataAlteracao: Date,
-        public alteradoPor: Utilizador,
-        public pocos: Array<Poco>,
-        public documentos: Array<Documento>,
-        public dadosGeoFisicos: Array<Documento>
+    public baciaID:Bacia;
+    public nomeBloco: string;
+    public descripBloco: string;
+    public onshore: boolean;
+    public observacoes: string;
+    public dataCriacao: Date;
+    public criadoPor: Utilizador;
+    public dataAlteracao: Date;
+    public alteradoPor: Utilizador;
+    public pocos: Array<Poco>;
+    public documentos: Array<Documento>;
+    public dadosGeoFisicos: Array<Documento>;
 
+    constructor(
+        public IdBloco?:number
     ){
         super();
     }

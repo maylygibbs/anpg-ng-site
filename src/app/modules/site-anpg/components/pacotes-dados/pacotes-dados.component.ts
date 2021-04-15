@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PacoteDados } from 'src/app/core/models/pacote-dados';
-import { PacotedadosService } from 'src/app/core/services/pacotedados.service';
+import { PacotedadosService } from '../../../../core/services/pacotedados.service';
 
 @Component({
   selector: 'app-pacote-dados',

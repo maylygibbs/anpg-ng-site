@@ -27,9 +27,9 @@ export const environment = {
       }
     }
   },
-  api: {
-    url: 'https://anpgwebapipacotes.azurewebsites.net',
-    avatarUrl: 'https://api.peygold.com'
+  api_pacotesdados: {
+    url: 'https://anpgwebapi.azure-api.net/api',
+    suscription: '068d5be69cda47bdba0268ab32becf33'
   },
   api_notification: {
     url: 'https://mensajeropush.herokuapp.com'

@@ -11,22 +11,22 @@ import { Utilizador } from "./utilizador";
  */
 export class Documento extends Model {
 
-    constructor(
-        public idDocumento: number,
-        public tipoDocuemto: TipoDocumento,
-        public subTipoDocumento: SubTipoDocumento,
-        public tipoRelatorio: TipoRelatorio,
-        public subTipoRelatorio: SubTipoRelatorio,
-        public nomeDoc: string,
-        public nomeCurto: string,
-        public descripcao: string,
-        public Observacoes: string,
-        public url: string,
-        public DataCriacao: Date,
-        public CriadoPor: Utilizador,
-        public DataAlteracao: Date,
-        public AlteradoPor: Utilizador
+    public tipoDocumento: TipoDocumento;
+    public subTipoDocumento: SubTipoDocumento;
+    public tipoRelatorio: TipoRelatorio;
+    public subTipoRelatorio: SubTipoRelatorio;
+    public nomeDoc: string;
+    public nomeCurto: string;
+    public descripcao: string;
+    public Observacoes: string;
+    public url: string;
+    public DataCriacao: Date;
+    public CriadoPor: Utilizador;
+    public DataAlteracao: Date;
+    public AlteradoPor: Utilizador;
 
+    constructor(
+        public idDocumento?: number
     ) {
         super()
     }

@@ -26,7 +26,7 @@
                                     <img class="article-image" width="800" height="380" [src]="pacote.imagemPacote" alt="some tile" />
                                 </a>
                                 <div class="post-body">
-                                    <h2><a href="#">{{pacote.nomePacote}}</a></h2>
+                                    <h2><a [routerLink]="['/anpg/pacote',pacote.idPacote]">{{pacote.nomePacote}}</a></h2>
                                     <p class="wrapper-text-list-pacote">{{pacote.descricaoPacote}}</p>
                                 </div>
                             </article>

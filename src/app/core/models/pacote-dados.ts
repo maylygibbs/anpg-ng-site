@@ -8,27 +8,27 @@ import { Utilizador } from "./utilizador";
 export class PacoteDados extends Model {
 
 
+    public mapa: string;        
+    public dataCriacao: Date;
+    public criadoPor: Utilizador;
+    public dataAlteracao: Date;
+    public alteradoPor: Utilizador;
+    public avatar:string;
+    public bacia: Bacia;
+    public dadosAdicionais: Array<Bloco>;
+    public dadosGeoFisico: Array<Documento>;
+    public estudos: Array<Documento>;
+    public infoJuridica: Array<Documento>; 
+    public relatoriosAbandono: Array<Documento>
+
+
     constructor(
-        public idPacote: number,
-        public nomePacote: string,
-        public descricaoPacote: string,
-        public imagemPacote: SafeResourceUrl,
-        public onshore: boolean,
-        public observacoes: string,
-        public mapa?: string,        
-        public dataCriacao?: Date,
-        public criadoPor?: Utilizador,
-        public dataAlteracao?: Date,
-        public alteradoPor?: Utilizador,
-        public avatar?:string,
-        public bacia?: Bacia,
-        public dadosAdicionais?: Array<Bloco>,
-        public dadosGeoFisico?: Array<Documento>,
-        public estudios?: Array<Documento>,
-        public infoJuridica?: Array<Documento>, 
-        public relatoriosAbandono?: Array<Documento>, 
-
-
+        public idPacote?: number,
+        public nomePacote?: string,
+        public descricaoPacote?: string,
+        public imagemPacote?: SafeResourceUrl,
+        public observacoes?: string,
+        public onshore?: boolean
     ) {
         super();
 
