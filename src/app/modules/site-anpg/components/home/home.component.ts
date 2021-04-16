@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit {
     this.$items = this.menuService.getHomeMenu().subscribe((items)=>{
       this.items = items;
     })
-
+    this.menuService.getHomeItemMenu(20,'center').then((item)=>{
+      console.log(item);
+    })
 
   }
 

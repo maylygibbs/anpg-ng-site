@@ -41,12 +41,17 @@ export class MenuService extends HttpService {
   }
 
   /**
-   * get side menu items as observable
+   * get home menu items as observable
   */
   getHomeMenu(): Observable<Array<MenuItem>> {
     return this.homeMenu.asObservable();
   }
 
+  /**
+   * get home menu items from services
+   * @param lenguage 
+   * @param location 
+   */
   getHomeItemMenu(lenguage:number, location:string):Promise<any>{
     return this.get(environment.api_pacotesdados.url,`/shared/${environment.appId}/${lenguage}/${location}`).toPromise();
   }
