@@ -17,7 +17,8 @@ import { PacoteDadosDetalhesComponent } from './components/pacote-dados-detalhes
   imports: [
     CommonModule,
     SharedAnpgModule,
-    SiteAnpgRoutingModule
+    SiteAnpgRoutingModule,
+    
   ]
 })
 export class SiteAnpgModule { }

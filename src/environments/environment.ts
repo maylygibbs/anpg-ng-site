@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  appId:1100,
   social_networks: {
     twitter : '#',
     facebook : '#',

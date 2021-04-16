@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PacoteDados } from 'src/app/core/models/pacote-dados';
 import { PacotedadosService } from 'src/app/core/services/pacotedados.service';
 
@@ -12,17 +13,21 @@ export class PacoteDadosDetalhesComponent implements OnInit {
   public pacote: PacoteDados;
   public section: string = 'dadosGeo';
 
-  constructor(private pacotesDadosService: PacotedadosService) { }
+  constructor(private pacotesDadosService: PacotedadosService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.pacotesDadosService.getPacoteById(1).then(
       (resp:any) => {
         this.pacote = resp[0];
         console.log(resp);
+        this.spinner.hide();
       }
     ).catch(
       (error) => {
         console.log(error);
+        this.spinner.hide();
       }
     )
     

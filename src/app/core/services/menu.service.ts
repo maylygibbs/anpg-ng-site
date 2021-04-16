@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { MenuItem } from '../models/menu-item';
 import { HttpService } from './http.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,10 @@ export class MenuService extends HttpService {
   */
   getHomeMenu(): Observable<Array<MenuItem>> {
     return this.homeMenu.asObservable();
+  }
+
+  getHomeItemMenu(lenguage:number, location:string):Promise<any>{
+    return this.get(environment.api_pacotesdados.url,`/shared/${environment.appId}/${lenguage}/${location}`).toPromise();
   }
 
 

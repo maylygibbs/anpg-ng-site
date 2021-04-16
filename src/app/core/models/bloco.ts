@@ -21,6 +21,7 @@ export class Bloco extends Model{
     public pocos: Array<Poco>;
     public documentos: Array<Documento>;
     public dadosGeoFisicos: Array<Documento>;
+    public mapas: Array<Documento>;
 
     constructor(
         public IdBloco?:number
