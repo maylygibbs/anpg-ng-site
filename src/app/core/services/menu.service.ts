@@ -52,9 +52,52 @@ export class MenuService extends HttpService {
    * @param lenguage 
    * @param location 
    */
-  getHomeItemMenu(lenguage:number, location:string):Promise<any>{
-    return this.get(environment.api_pacotesdados.url,`/shared/${environment.appId}/${lenguage}/${location}`).toPromise();
+  getHomeItemMenu(lenguage:number):Promise<Array<MenuItem>>{
+    let options:Array<MenuItem>;
+    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/center`).toPromise().then(
+      (resp:any)=>{ 
+        
+        if(resp && resp.length>0){
+          options = new Array<MenuItem>();
+          options = resp[0].data.Menus.map((item)=>{
+            const menu = new MenuItem();
+            menu.label = item.Rotulo;
+            menu.href = item.Href;
+            menu.color = item.Color; 
+            return menu;
+          });
+        }
+        this.setHomeMenu(options);
+       return options; 
+    });
   }
+
+    /**
+   * get home menu items from services
+   * @param lenguage 
+   * @param location 
+   */
+  getSideItemMenu(lenguage:number):Promise<Array<MenuItem>>{
+    let options:Array<MenuItem>;
+    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/side`).toPromise().then(
+      (resp:any)=>{ 
+        
+        if(resp && resp.length>0){
+          options = new Array<MenuItem>();
+          options = resp[0].data.Menus.map((item)=>{
+            const menu = new MenuItem();
+            menu.label = item.Rotulo;
+            menu.href = item.Href;
+            menu.color = item.Color; 
+            return menu;
+          });
+        }
+        this.setSideMenu(options);
+       return options; 
+    });
+  }
+
+
 
 
 }

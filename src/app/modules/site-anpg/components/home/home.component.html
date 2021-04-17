@@ -1,4 +1,4 @@
-
+<app-spinner></app-spinner>
 <section class="page-section home-page page-section-current">
    <div class="background-continer">
       <div class="row metro-panel">
@@ -14,13 +14,13 @@
                   <a class="showMenu displayMenu search"><i class="fa-search fa icon-x back"></i></a>
                </div>
             </div>
-            <div class="row">
+            <div *ngIf="items && items.length>0" class="row content">
                <div id="before-tiles" class="large-12 columns">
                </div>
                <div class="four large-4 columns">
                   <div class="row">
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-1'>
+                        <div class='color-1' [style]="'background:'+items[0].color">
                            <a [routerLink]="items[0].href">
                               <span class='box-title'>{{items[0].label}}</span>
                               <br />
@@ -29,7 +29,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-2'>
+                        <div class='color-2' [style]="'background:'+items[1].color">
                            <a [routerLink]="items[1].href">
                               <span class='box-title'>{{items[1].label}}</span>
                               <br />
@@ -38,7 +38,7 @@
                         </div>
                      </div>
                      <div class='twelve large-12 columns space testimonials-box medium'>
-                        <div class='color-3'>
+                        <div class='color-3' [style]="'background:'+items[2].color">
                            <span class='box-title anim'>{{items[2].label}}</span>
                            <ul class='testimonials'>
                               <li>
@@ -73,7 +73,7 @@
                         </div>
                      </div>
                      <div class='twelve large-12 columns space featured blog-box medium'>
-                        <div class='color-4'> <span class='box-title anim'>{{items[3].label}}</span>
+                        <div class='color-4' [style]="'background:'+items[3].color"> <span class='box-title anim'>{{items[3].label}}</span>
                            <span class='featured-image'>
                               <img width="400" height="400" src="assets/images/1.jpg" alt="some tile" />
                            </span>
@@ -87,7 +87,7 @@
                <div class="four large-4 columns">
                   <div class="row">
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-5'>
+                        <div class='color-5' [style]="'background:'+items[4].color">
                            <a [href]="items[4].href">
                               <span class='box-title'>{{items[4].label}}</span>
                               <br />
@@ -96,7 +96,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-6'>
+                        <div class='color-6' [style]="'background:'+items[5].color">
                            <a [href]="items[5].href" >
                               <span class='box-title'>{{items[5].label}}</span>
                               <br />
@@ -160,7 +160,7 @@
                <div class="four large-4 columns">
                   <div class="row">
                      <div class='twelve small-12 columns twitter-feed-box space'>
-                        <div class='color-8'>
+                        <div class='color-8' [style]="'background:'+items[6].color">
                            <a [routerLink]="items[6].href">
                               <span class='box-title'>{{items[6].label}}</span>
                               <br />
@@ -169,7 +169,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-9'>
+                        <div class='color-9' [style]="'background:'+items[7].color">
                            <a [routerLink]="items[7].href">
                               <span class='box-title'>{{items[7].label}}</span>
                               <br />
@@ -178,7 +178,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-10'>
+                        <div class='color-10' [style]="'background:'+items[8].color">
                            <a [routerLink]="items[8].href"> <span class='box-title'>{{items[8].label}}</span>
                               <br />
                               <i class='fa-envelope fa fa-4x'></i>
@@ -186,7 +186,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-11'>
+                        <div class='color-11' [style]="'background:'+items[9].color">
                            <a [routerLink]="items[9].href">
                               <span class='box-title'>{{items[9].label}}</span>
                               <br />
@@ -195,7 +195,7 @@
                         </div>
                      </div>
                      <div class='six small-6 columns contact-box space'>
-                        <div class='color-12'>
+                        <div class='color-12' [style]="'background:'+items[10].color">
                            <a [routerLink]="items[10].href">
                               <span class='box-title'>{{items[10].label}}</span>
                               <br />

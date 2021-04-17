@@ -14,6 +14,7 @@ export class MenuItem extends Model {
   public icon: string;
   public param:string;
   public className: string;
+  public color: string;
   public target:string;
 
   /**
