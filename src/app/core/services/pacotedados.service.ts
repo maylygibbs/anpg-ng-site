@@ -55,7 +55,7 @@ export class PacotedadosService extends HttpService {
     return this.get(environment.api_pacotesdados.url, `/pacotes/${id}`).toPromise().then(
       (resp) => {
 
-        pacotes = resp[0].PacotesdeDados.map((item) => {
+        pacotes = resp[0].data.PacotesdeDados.map((item:any) => {
           const pacote = new PacoteDados(
             item.IdPacote,
             item.NomePacote,
