@@ -13,74 +13,41 @@
          <a class="showMenu displayMenu search"><i class="fa-search fa icon-x back"></i></a>
       </div>
    </div>
-   <div  class="row clear-fix">
+   <div class="row clear-fix">
       <!-- PORTFOLIO PACOTE DE DADOS -->
       <div class="row portfolio-page">
-            <!-- PORTFOLIO PACOTE DE DADOS MENU -->
-         <ul class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
-            <li class="article portfolio-item" id="14" (click)="section='infoBasic'">
+         <!-- PORTFOLIO PACOTE DE DADOS MENU -->
+         <ul *ngIf="pacote && pacote.allGroupDocuments"
+            class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
+            <li *ngFor="let group of pacote.allGroupDocuments; let i = index" class="article portfolio-item" id="14"
+               (click)="section='infoBasic'">
                <figure>
-                  <img width="500" height="380" src="assets/images/20.jpg" alt="9862145525_c08b245398_h" />
-                  <figcaption class="text-center" (click)="section='infoBasic'">
-                     <h3>Informação básica</h3>
+                  <img class="figure-image" width="500" height="380" [src]="group.tipoDocumento.image"
+                     [alt]="group.tipoDocumento.title" />
+                  <figcaption class="text-center" (click)="showSectionDocuments(i)">
+                     <h3>{{group.tipoDocumento.title}}</h3>
                   </figcaption>
                </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="section='infoBasic'"></i></span>
-            </li>
-            <li class="article portfolio-item" id="160" (click)="section='dadosGeo'">
-               <figure>
-                  <img width="500" height="380" src="assets/images/12.jpg" alt="13tndZF" />
-                  <figcaption class="text-center" (click)="section='dadosGeo'">
-                     <h3>Dados Geológicos</h3>
-                  </figcaption>
-               </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="section='dadosGeo'"></i></span>
-            </li>
-            <li class="article portfolio-item" id="157" (click)="section='estudos'">
-               <figure>
-                  <img width="500" height="380" src="assets/images/13.jpg" alt="1j5JfNg" />
-                  <figcaption class="text-center" (click)="section='estudos'">
-                     <h3>Estudos</h3>
-                  </figcaption>
-               </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="section='mapas'"></i></span>
-            </li>
-            <li class="article portfolio-item" id="153" (click)="section='mapas'">
-               <figure>
-                  <img width="500" height="380" src="assets/images/14.jpg" alt="1m7ZhI3" />
-                  <figcaption class="text-center" (click)="section='mapas'">
-                     <h3>Mapas</h3>
-                  </figcaption>
-               </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="section='mapas'"></i></span>
-            </li>
-            <li class="article portfolio-item" id="94" (click)="section='infoLegal'">
-               <figure>
-                  <img width="500" height="380" src="assets/images/15.jpg" alt="1a2n0Ck" />
-                  <figcaption class="text-center" (click)="section='infoLegal'">
-                     <h3>Informação legal</h3>
-                  </figcaption>
-               </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="section='infoLegal'"></i></span>
+               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="showSectionDocuments(i)"></i></span>
+
             </li>
          </ul>
-         <div *ngIf="pacote && section=='infoBasic'" id="project-info">
+         <div *ngIf="pacote && sectionIndex==0" id="project-info">
             <div id="content">
-               <i class="fa-times fa back" (click)="section=''"></i>
+               <i class="fa-times fa back" (click)="sectionIndex=-1"></i>
                <div class="scrollable-content">
                   <div class="row">
                      <div class="large-11 columns">
                         <h2 class="project-title">{{pacote.nomePacote}}</h2>
                      </div>
-   
+
                      <div class="large-6 columns">
                         <div class="project-images">
                            <div class="item-list">
                               <ul class="">
                                  <li>
                                     <a href="#">
-                                       <img alt="13tndZF" class="attachment-project-thumb"
-                                          [src]="pacote.imagemPacote">
+                                       <img alt="13tndZF" class="attachment-project-thumb" [src]="pacote.imagemPacote">
                                     </a>
                                  </li>
                               </ul>
@@ -91,16 +58,10 @@
                         <p>{{pacote.descricaoPacote}}</p>
                      </div>
                   </div>
-               </div>
-            </div>
-         </div>
-         <div *ngIf="pacote && section=='dadosGeo'" id="project-info">
-            <div id="content">
-               <i class="fa-times fa back" (click)="section=''"></i>
-               <div class="scrollable-content">
+                  <!--BLOCOS Y POCOS -->
                   <div class="row">
                      <div class="large-11 columns">
-                        <h2 class="project-title">Dados Geológicos</h2>
+                        <h2 class="project-title">Blocos y Pocos</h2>
                      </div>
                      <div class="large-6 columns">
                         <div class="project-images">
@@ -119,176 +80,55 @@
                      <div class="large-6 columns project-content">
                         <div class="row">
                            <div class="large-11 columns">
-                              <h3 class="project-title">Pocos</h3>
+                              <h3 class="project-title"></h3>
                            </div>
                         </div>
                         <div class="row">
                            <div class="large-12 columns" *ngFor="let bloco of pacote.bacia.blocos">
-                            <ul class="pricing-table" >
-                              <li class="title">{{bloco.nomeBloco}}</li>
-                              <li class="price"></li>
-                              <li class="description">{{bloco.descripBloco}}</li>
-                              <li class="bullet-item" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}</li>
-                            </ul>
-                           </div>
-                         </div>
-                       </div>
-                  </div>
-                  <br>
-                  <br>
-                  <h3 class="text-center small-title">Relatórios e Registros de Poços</h3>
-                  <div class="row">
-                     <div class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns" *ngFor="let bloco of pacote.bacia.blocos">
-                                 <ul class="pricing-table">
-                                   <li class="title">{{bloco.nomeBloco}}</li>
-                                   <li class="bullet-item" *ngFor="let poco of bloco.pocos">
-                                    <div class="row">
-                                       <div class="large-4 columns">
-                                          {{poco.nomePoco}}
-                                       </div>
-                                       <div class="large-8 columns">
-                                          <ul>
-                                             <li *ngFor="let documento of poco.documentos">
-                                                {{documento.nomeDoc}}</li>
-                                          </ul>
-                                       </div>
-                                    </div>                           
- 
-                                    </li>
-                                 </ul>
-                                </div>
+                              <ul class="pricing-table">
+                                 <li class="title">{{bloco.nomeBloco}}</li>
+                                 <li class="price"></li>
+                                 <li class="description">{{bloco.descripBloco}}</li>
+                                 <li class="bullet-item" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}</li>
+                              </ul>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <br>
-                  <br>
-                  <h3 class="text-center small-title">Dados Adicionais</h3>
+               </div>
+            </div>
+         </div>
+         <div *ngIf="pacote && groupDocumentsSelected && sectionIndex>0" id="project-info">
+            <div id="content">
+               <i class="fa-times fa back" (click)="section=-1"></i>
+               <div class="scrollable-content">
                   <div class="row">
+                     <div class="large-11 columns">
+                        <h2 class="project-title">{{groupDocumentsSelected.tipoDocumento.title}}</h2>
+                     </div>
+                     <br>
+                     <br>
+                     <br>
+                     <br>
                      <div class="large-12 columns project-content">
                         <div class="container">
                            <div class="row">
-                              <div class="large-12 columns" *ngFor="let bloco of pacote.dadosAdicionais">
+                              <div class="large-12 columns">
                                  <ul class="pricing-table">
-                                   <li class="title">{{bloco.nomeBloco}}</li>
-                                   <li class="bullet-item" *ngFor="let poco of bloco.pocos">
-                                    <div class="row">
-                                       <div class="large-4 columns">
-                                          {{poco.nomePoco}}
-                                       </div>
-                                       <div class="large-8 columns">
-                                          <ul>
-                                             <li *ngFor="let documento of poco.documentos">
-                                                {{documento.nomeDoc}}</li>
-                                          </ul>
-                                       </div>
-                                    </div>                           
- 
+                                    <li class="title">Documentos</li>
+                                    <li class="bullet-item" *ngFor="let doc of groupDocumentsSelected.documentos">
+                                       {{doc.nomeDoc}}
                                     </li>
                                  </ul>
-                                </div>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
+               </div>
+            </div>
+         </div>
 
-               </div>
-
-            </div>
-         </div>
-         <div *ngIf="pacote && section=='estudos'" id="project-info">
-            <div id="content">
-               <i class="fa-times fa back" (click)="section=''"></i>
-               <div class="scrollable-content">
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">Estudos</h2>
-                     </div>
-                     <br>
-                     <br>
-                     <br>
-                     <br>
-                     <div class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                   <li class="title">Estudos</li>
-                                   <li class="bullet-item" *ngFor="let estudo of pacote.estudos">
-                                       {{estudo.nomeDoc}}
-                                    </li>
-                                 </ul>
-                                </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div *ngIf="pacote && section=='mapas'" id="project-info">
-            <div id="content">
-               <i class="fa-times fa back" (click)="section=''"></i>
-               <div class="scrollable-content">
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">Mapas</h2>
-                     </div>
-                     <br>
-                     <br>
-                     <br>
-                     <br>
-                     <div class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                   <li class="title">Mapas</li>
-                                   <li class="bullet-item" *ngFor="let mapa of pacote.bacia.mapas">
-                                       {{mapa.nomeDoc}}
-                                    </li>
-                                 </ul>
-                                </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div *ngIf="pacote && section=='infoLegal'" id="project-info">
-            <div id="content">
-               <i class="fa-times fa back" (click)="section=''"></i>
-               <div class="scrollable-content">
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">Informação legal</h2>
-                     </div>
-                     <br>
-                     <br>
-                     <br>
-                     <br>
-                     <div class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                   <li class="title">Informação legal</li>
-                                   <li class="bullet-item" *ngFor="let infoJuridica of pacote.infoJuridica">
-                                       {{infoJuridica.nomeDoc}}
-                                    </li>
-                                 </ul>
-                                </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>            
 
       </div>
       <!-- END PORTFOLIO/> -->

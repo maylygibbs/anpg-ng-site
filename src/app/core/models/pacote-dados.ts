@@ -2,7 +2,9 @@ import { SafeResourceUrl } from "@angular/platform-browser";
 import { Bacia } from "./bacia";
 import { Bloco } from "./bloco";
 import { Documento } from "./documento";
+import { GrupoDocumento } from "./grupo-documento";
 import { Model } from "./model";
+import { TipoDocumento } from "./tipo-documento";
 import { Utilizador } from "./utilizador";
 
 export class PacoteDados extends Model {
@@ -19,7 +21,8 @@ export class PacoteDados extends Model {
     public dadosGeoFisico: Array<Documento>;
     public estudos: Array<Documento>;
     public infoJuridica: Array<Documento>; 
-    public relatoriosAbandono: Array<Documento>
+    public relatoriosAbandono: Array<Documento>;
+    public groupDocuments: Array<GrupoDocumento>;
 
 
     constructor(
@@ -32,6 +35,22 @@ export class PacoteDados extends Model {
     ) {
         super();
 
+    }
+
+    /** Return id encrypted */
+    get encryptIdentity():string{
+        return btoa(String(this.idPacote));
+    }
+
+    get allGroupDocuments(): Array<any>{
+        const arrayTemp = new Array<GrupoDocumento>();
+        const grupoDocumento = new GrupoDocumento();
+        grupoDocumento.tipoDocumento = new TipoDocumento('0','Informação básica');
+        grupoDocumento.tipoDocumento.title = 'Informação básica';
+        grupoDocumento.tipoDocumento.image = 'assets/images/0.png';
+        arrayTemp.push(grupoDocumento);
+        return arrayTemp.concat(this.groupDocuments) ; //Array.prototype.push.apply(arrayTemp, this.groupDocuments);
+        
     }
 
 }

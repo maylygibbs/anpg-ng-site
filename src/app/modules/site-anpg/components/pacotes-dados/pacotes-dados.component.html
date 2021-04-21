@@ -24,10 +24,10 @@
                         <li *ngFor="let pacote of pacotes" class="">
                             <article class="article">
                                 <a href="#" title="Cassettiera 3 cass noce">
-                                    <img class="article-image" width="800" height="380" [src]="pacote.imagemPacote" alt="some tile" />
+                                    <img class="article-image" width="800" height="380" [routerLink]="['/anpg/pacote',pacote.encryptIdentity]" [src]="pacote.imagemPacote" alt="some tile" />
                                 </a>
                                 <div class="post-body">
-                                    <h2><a [routerLink]="['/anpg/pacote',pacote.idPacote]">{{pacote.nomePacote}}</a></h2>
+                                    <h2><a [routerLink]="['/anpg/pacote',pacote.encryptIdentity]">{{pacote.nomePacote}}</a></h2>
                                     <p class="wrapper-text-list-pacote">{{pacote.descricaoPacote}}</p>
                                 </div>
                             </article>
@@ -38,4 +38,5 @@
             </div>
         </div>
     </div>
+    
 </section>

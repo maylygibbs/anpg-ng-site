@@ -8,7 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
 import { HttpHeaderInterceptor } from './core/interceptors/http-header.interceptor';
 import { MenuService } from './core/services/menu.service';
-import { homeMenuProviderFactory, sideMenuProviderFactory } from './core/factory/app-initializer.factory';
+import { documentTypeProviderFactory, homeMenuProviderFactory, sideMenuProviderFactory } from './core/factory/app-initializer.factory';
+import { DocumentTypeService } from './core/services/document-type.service';
 
 
 
@@ -27,7 +28,8 @@ import { homeMenuProviderFactory, sideMenuProviderFactory } from './core/factory
     { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
     { provide: APP_INITIALIZER, useFactory: homeMenuProviderFactory, deps: [MenuService], multi: true},
-    { provide: APP_INITIALIZER, useFactory: sideMenuProviderFactory, deps: [MenuService], multi: true}
+    { provide: APP_INITIALIZER, useFactory: sideMenuProviderFactory, deps: [MenuService], multi: true},
+    { provide: APP_INITIALIZER, useFactory: documentTypeProviderFactory, deps: [DocumentTypeService], multi: true}
 
   ],
   bootstrap: [AppComponent]

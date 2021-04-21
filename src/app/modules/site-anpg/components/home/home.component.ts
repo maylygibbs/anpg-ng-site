@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    this.$items = this.menuService.getHomeMenu().subscribe((items) => {
+    this.$items = this.menuService.getHomeMenu().subscribe((items:any) => {
       this.items = items;
       this.spinner.hide();
     })

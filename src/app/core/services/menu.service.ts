@@ -59,7 +59,7 @@ export class MenuService extends HttpService {
         
         if(resp && resp.length>0){
           options = new Array<MenuItem>();
-          options = resp[0].data.Menus.map((item)=>{
+          options = resp[0].data.Menus.map((item:any)=>{
             const menu = new MenuItem();
             menu.label = item.Rotulo;
             menu.href = item.Href;
@@ -84,7 +84,7 @@ export class MenuService extends HttpService {
         
         if(resp && resp.length>0){
           options = new Array<MenuItem>();
-          options = resp[0].data.Menus.map((item)=>{
+          options = resp[0].data.Menus.map((item:any)=>{
             const menu = new MenuItem();
             menu.label = item.Rotulo;
             menu.href = item.Href;

@@ -12,10 +12,16 @@ export class MenuItem extends Model {
   public displayed: boolean;
   public isSeparator: boolean;
   public icon: string;
-  public param:string;
+  public param: string;
   public className: string;
   public color: string;
-  public target:string;
+  public target: string;
+
+  /** for imagen slider */
+  public image: 'assets/img/flags/ad.png';
+  public thumbImage: 'assets/img/flags/ad.png';
+  public title: 'Image title';
+  public alt: 'Image alt';
 
   /**
    * Get the url for the routerlink

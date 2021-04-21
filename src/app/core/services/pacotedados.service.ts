@@ -9,6 +9,7 @@ import { Bloco } from '../models/bloco';
 import { Poco } from '../models/poco';
 import { Documento } from '../models/documento';
 import { TipoDocumento } from '../models/tipo-documento';
+import { GrupoDocumento } from "../models/grupo-documento";
 
 @Injectable({
   providedIn: 'root'
@@ -209,6 +210,26 @@ export class PacotedadosService extends HttpService {
               documento.nomeCurto = itemInfoJuri.NomeCurto;
               documento.tipoDocumento = new TipoDocumento(itemInfoJuri.IdTipoDocumentoJuridica, itemInfoJuri.TipoDocumentoJuridica);
               return documento;
+            });
+          }
+
+          if(item.DocumentosPacotes){
+            pacote.groupDocuments = item.DocumentosPacotes.map((itemGroupDoc:any)=>{
+              const groupDocuments = new GrupoDocumento();
+               groupDocuments.tipoDocumento = new TipoDocumento(itemGroupDoc.IdTipoDoc, itemGroupDoc.RotuloTDoc);
+              groupDocuments.tipoDocumento.title = itemGroupDoc.RotuloTDoc;
+              groupDocuments.tipoDocumento.image = itemGroupDoc.Imagen;
+              groupDocuments.tipoDocumento.orderPosition = itemGroupDoc.PosicaoOrdem;
+              if(itemGroupDoc.Documentos){
+                groupDocuments.documentos = JSON.parse(itemGroupDoc.Documentos).map((itemDoc:any)=>{
+                  const documento = new Documento(itemDoc.IdDocumento);
+                  documento.nomeDoc = itemDoc.NomeDoc;
+                  documento.url = itemDoc.URL;
+                  return documento;
+                });
+                return groupDocuments;
+              }
+              
             });
           }
 
