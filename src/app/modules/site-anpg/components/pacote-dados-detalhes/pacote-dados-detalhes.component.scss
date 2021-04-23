@@ -1,14 +1,23 @@
-.portfolio-page-menu{
+ng-image-slider ::ng-deep {
+    .main {
+        min-height: 180px !important;
+        max-height: 180px !important;
+        .main-inner {
+            height: 180px !important;
+        }
+    }
+}
+.portfolio-page-menu {
     margin-top: 3%;
 }
 
-.project-images{
-    img{
-        width:500px;
-        height:500px;
+.project-images {
+    img {
+        width: 500px;
+        height: 500px;
     }
 }
-#content{
+#content {
     height: 500px;
 }
 .scrollable-content {
@@ -17,9 +26,41 @@
     overflow-y: auto;
     overflow-x: hidden;
     transform: translateY(0);
+    padding: 40px;
+    margin-top: 40px;
 }
 
-.figure-image{
+.figure-image {
     width: 300px;
     height: 180px;
 }
+
+#project-info {
+    background: rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    padding: 20px 20px 30px;
+    position: relative;
+}
+
+.page-section-57 {
+    background: url(/assets/images/Imagem-homepage.png) no-repeat center center / cover;
+    color: #ffffff;
+    background-size: cover;
+}
+
+p {
+    text-align: justify !important;
+    font-size: 2ch !important;
+}
+
+
+.pricing-table .description {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+
+    text-align: justify !important;
+
+    font-size: 0.80em !important;
+
+}
+
+

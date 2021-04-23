@@ -9,7 +9,7 @@ import { Utilizador } from "./utilizador";
  */
 export class Bloco extends Model{
 
-    public baciaID:Bacia;
+    public bacia:Bacia;
     public nomeBloco: string;
     public descripBloco: string;
     public onshore: boolean;

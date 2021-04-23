@@ -16,13 +16,14 @@ export class PacoteDados extends Model {
     public dataAlteracao: Date;
     public alteradoPor: Utilizador;
     public avatar:string;
-    public bacia: Bacia;
+    public bacias: Array<Bacia>;
     public dadosAdicionais: Array<Bloco>;
     public dadosGeoFisico: Array<Documento>;
     public estudos: Array<Documento>;
     public infoJuridica: Array<Documento>; 
     public relatoriosAbandono: Array<Documento>;
     public groupDocuments: Array<GrupoDocumento>;
+    public groupDocumentsTypes:Array<Object>;
 
 
     constructor(
@@ -40,17 +41,6 @@ export class PacoteDados extends Model {
     /** Return id encrypted */
     get encryptIdentity():string{
         return btoa(String(this.idPacote));
-    }
-
-    get allGroupDocuments(): Array<any>{
-        const arrayTemp = new Array<GrupoDocumento>();
-        const grupoDocumento = new GrupoDocumento();
-        grupoDocumento.tipoDocumento = new TipoDocumento('0','Informação básica');
-        grupoDocumento.tipoDocumento.title = 'Informação básica';
-        grupoDocumento.tipoDocumento.image = 'assets/images/0.png';
-        arrayTemp.push(grupoDocumento);
-        return arrayTemp.concat(this.groupDocuments) ; //Array.prototype.push.apply(arrayTemp, this.groupDocuments);
-        
     }
 
 }

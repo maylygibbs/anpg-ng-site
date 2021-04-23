@@ -17,20 +17,18 @@
       <!-- PORTFOLIO PACOTE DE DADOS -->
       <div class="row portfolio-page">
          <!-- PORTFOLIO PACOTE DE DADOS MENU -->
-         <ul *ngIf="pacote && pacote.allGroupDocuments"
+         <div *ngIf="pacote" style="width: 100%; min-height: 139px; text-align:center;margin:auto; padding:3px;">
+            <ng-image-slider
+            [images]="pacote.groupDocumentsTypes"
+            [infinite]="false"
+            [autoSlide]="1"
+            [imageSize]="{width: '300px', height:'139px'}"
+            (imageClick)="showSectionDocuments($event)" 
+            [imagePopup]='false'
+            slideImage="1" #nav></ng-image-slider>
+        </div>
+         <ul 
             class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
-            <li *ngFor="let group of pacote.allGroupDocuments; let i = index" class="article portfolio-item" id="14"
-               (click)="section='infoBasic'">
-               <figure>
-                  <img class="figure-image" width="500" height="380" [src]="group.tipoDocumento.image"
-                     [alt]="group.tipoDocumento.title" />
-                  <figcaption class="text-center" (click)="showSectionDocuments(i)">
-                     <h3>{{group.tipoDocumento.title}}</h3>
-                  </figcaption>
-               </figure>
-               <span class="plus-icon flipOutX"><i class="fa-plus fa" (click)="showSectionDocuments(i)"></i></span>
-
-            </li>
          </ul>
          <div *ngIf="pacote && sectionIndex==0" id="project-info">
             <div id="content">
@@ -40,11 +38,10 @@
                      <div class="large-11 columns">
                         <h2 class="project-title">{{pacote.nomePacote}}</h2>
                      </div>
-
                      <div class="large-6 columns">
                         <div class="project-images">
                            <div class="item-list">
-                              <ul class="">
+                              <ul>
                                  <li>
                                     <a href="#">
                                        <img alt="13tndZF" class="attachment-project-thumb" [src]="pacote.imagemPacote">
@@ -55,9 +52,11 @@
                         </div>
                      </div>
                      <div class="large-6 columns project-content">
-                        <p>{{pacote.descricaoPacote}}</p>
+                        <p >{{pacote.descricaoPacote}}</p>
                      </div>
                   </div>
+                  <br>
+                  <br>
                   <!--BLOCOS Y POCOS -->
                   <div class="row">
                      <div class="large-11 columns">
@@ -66,7 +65,7 @@
                      <div class="large-6 columns">
                         <div class="project-images">
                            <div class="item-list">
-                              <ul class="">
+                              <ul>
                                  <li>
                                     <a href="#">
                                        <img width="450" height="380" alt="13tndZF" class="attachment-project-thumb"
@@ -78,22 +77,26 @@
                         </div>
                      </div>
                      <div class="large-6 columns project-content">
-                        <div class="row">
-                           <div class="large-11 columns">
-                              <h3 class="project-title"></h3>
+                        <div class="row" *ngFor="let bacia of pacote.bacias" style="border: 2px solid whitesmoke; padding-top: 10px;">
+                           <div class="large-12 columns">
+                              <div class="row">
+                                 <div class="large-4 columns">
+                                    <div style="font-size: 1.5em !important;">
+                                       {{bacia.nomeBacia}} 
+                                    </div>
+                                 </div>
+                                 <div class="large-8 columns" *ngFor="let bloco of bacia.blocos">
+                                    <ul class="pricing-table">
+                                       <li class="title">{{bloco.nomeBloco}}</li>
+                                       <li class="description">{{bloco.descripBloco}}</li>
+                                       <li class="bullet-item" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}</li>
+                                    </ul>
+                                 </div>
+                              </div>
                            </div>
                         </div>
-                        <div class="row">
-                           <div class="large-12 columns" *ngFor="let bloco of pacote.bacia.blocos">
-                              <ul class="pricing-table">
-                                 <li class="title">{{bloco.nomeBloco}}</li>
-                                 <li class="price"></li>
-                                 <li class="description">{{bloco.descripBloco}}</li>
-                                 <li class="bullet-item" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}</li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
+                     </div> 
+
                   </div>
                </div>
             </div>
@@ -110,20 +113,107 @@
                      <br>
                      <br>
                      <br>
-                     <div class="large-12 columns project-content">
+                     <div *ngIf="groupDocumentsSelected.hasPacoteDocuments" class="large-12 columns project-content">
                         <div class="container">
                            <div class="row">
                               <div class="large-12 columns">
                                  <ul class="pricing-table">
-                                    <li class="title">Documentos</li>
+                                    <li class="title">Documentos Pacote</li>
                                     <li class="bullet-item" *ngFor="let doc of groupDocumentsSelected.documentos">
-                                       {{doc.nomeDoc}}
+                                      <a href="/">{{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
                                     </li>
                                  </ul>
                               </div>
                            </div>
                         </div>
                      </div>
+                     <div *ngIf="groupDocumentsSelected.hasBaciasDocuments" class="large-12 columns project-content">
+                        <div class="container">
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <ul class="pricing-table">
+                                    <li class="title">Documentos Bacia</li>
+                                    <div *ngFor="let bacia of groupDocumentsSelected.pacoteBacias">
+                                       <li class="bullet-item" *ngIf="bacia.documentos">
+                                          <div class="row">
+                                             <div class="large-4 columns">
+                                                {{bacia.nomeBacia}}
+                                             </div>
+                                             <div class="large-8 columns">
+                                                <ul>
+                                                   <li *ngFor="let doc of bacia.documentos">
+                                                      <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
+                                                   </li>      
+                                                 </ul>
+                                             </div>
+                                          </div>                                
+                                       </li>
+                                    </div>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div *ngIf="groupDocumentsSelected.hasBlocosDocuments" class="large-12 columns project-content">
+                        <div class="container">
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <ul class="pricing-table">
+                                    <li class="title">Documentos Blocos</li>
+                                    <div *ngFor="let bloco of groupDocumentsSelected.pacoteBlocos">
+                                       <li class="bullet-item" *ngIf="bloco.documentos">
+                                          <div class="row" >
+                                             <div class="large-4 columns">
+                                                {{bloco.nomeBloco}}
+                                             </div>
+                                             <div class="large-8 columns">
+                                                <ul>
+                                                   <li *ngFor="let doc of bloco.documentos">
+                                                      <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
+                                                   </li>      
+                                                 </ul>
+                                             </div>
+                                          </div>                           
+                                       </li>
+                                    </div>
+
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div> 
+                     <div *ngIf="groupDocumentsSelected.hasPocosDocuments" class="large-12 columns project-content">
+                        <div class="container">
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <ul class="pricing-table">
+                                    <li class="title">Documentos Pocos</li>
+                                    <div *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
+                                       <li class="bullet-item">
+                                          <div class="row" >
+                                             <div class="large-4 columns">
+                                                {{bloco.nomeBloco}}
+                                             </div>
+                                             <div class="large-8 columns">
+                                                <ul>
+                                                   <li *ngFor="let poco of bloco.pocos">
+                                                     {{poco.nomePoco}}
+                                                     <ul>
+                                                      <li *ngFor="let doc of poco.documentos">
+                                                         <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
+                                                      </li>
+                                                    </ul>
+                                                   </li>
+                                                 </ul>
+                                             </div>
+                                          </div>                                     
+                                       </li>
+                                    </div>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>                                          
                   </div>
                </div>
             </div>

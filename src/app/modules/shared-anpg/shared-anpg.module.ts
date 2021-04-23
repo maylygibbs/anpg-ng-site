@@ -6,7 +6,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -14,8 +14,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   imports: [
     CommonModule,
     RouterModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgImageSliderModule
   ],
-  exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent]
+  exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent, NgImageSliderModule]
 })
 export class SharedAnpgModule { }
