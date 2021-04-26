@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
-import { GrupoDocumento } from '../../../..//core/models/grupo-documento';
-import { TipoDocumento } from '../../../..//core/models/tipo-documento';
+import { Bloco } from '../../../../core/models/bloco';
+import { GrupoDocumento } from '../../../../core/models/grupo-documento';
+import { TipoDocumento } from '../../../../core/models/tipo-documento';
 import { PacoteDados } from '../../../../core/models/pacote-dados';
 import { DocumentTypeService } from '../../../../core/services/document-type.service';
 import { PacotedadosService } from '../../../../core/services/pacotedados.service';
@@ -57,12 +58,29 @@ export class PacoteDadosDetalhesComponent implements OnInit {
     
   }
 
+  /**
+   * show section document by id
+   * @param sectionIndex 
+   */
   showSectionDocuments(sectionIndex:number){
     this.sectionIndex = sectionIndex;
     if(sectionIndex>0){
       let groupsArray = this.pacote.groupDocuments.filter((group,index)=> index == sectionIndex-1 );
       this.groupDocumentsSelected = groupsArray[0];
     }
+  }
+
+  thisBlocoHasDocuments(boco: Bloco):boolean{
+    let hasDocuments = false;
+    
+    boco.pocos.forEach(element => {
+      if (element.documentos){
+        hasDocuments = true;
+      }
+    });
+
+    return hasDocuments;
+
   }
 
 }

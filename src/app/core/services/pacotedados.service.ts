@@ -276,8 +276,8 @@ export class PacotedadosService extends HttpService {
                   bloco.bacia = new Bacia(itemBloco.IdBacia);
                   bloco.bacia.nomeBacia = itemBloco.NomeBacia;
 
-                  if (itemBloco.pocos) {
-                    bloco.pocos = itemBloco.pocos.map((itemPoco: any) => {
+                  if (itemBloco.Poco) {
+                    bloco.pocos = itemBloco.Poco.map((itemPoco: any) => {
                       const poco = new Poco(itemPoco.IdPoco);
                       poco.nomePoco = itemPoco.NomePoco;
                       if (itemPoco.Documentos) {

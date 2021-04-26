@@ -189,21 +189,31 @@
                                  <ul class="pricing-table">
                                     <li class="title">Documentos Pocos</li>
                                     <div *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
-                                       <li class="bullet-item">
-                                          <div class="row" >
+                                       <li class="bullet-item" *ngIf="thisBlocoHasDocuments(bloco)">
+                                          <div class="row" *ngIf="thisBlocoHasDocuments(bloco)">
                                              <div class="large-4 columns">
                                                 {{bloco.nomeBloco}}
                                              </div>
                                              <div class="large-8 columns">
                                                 <ul>
-                                                   <li *ngFor="let poco of bloco.pocos">
-                                                     {{poco.nomePoco}}
-                                                     <ul>
-                                                      <li *ngFor="let doc of poco.documentos">
-                                                         <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
+                                                   <div  *ngFor="let poco of bloco.pocos">
+                                                      <li>
+                                                         <div class="row" *ngIf="poco.documentos">
+                                                            <div class="large-4 columns">
+                                                               {{poco.nomePoco}}
+                                                            </div>
+                                                            <div class="large-8 columns">
+                                                               <ul>
+                                                                  <li *ngFor="let doc of poco.documentos">
+                                                                     <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
+                                                                  </li>
+                                                                </ul>
+                                                            </div>
+                                                         </div>                                                
+   
                                                       </li>
-                                                    </ul>
-                                                   </li>
+                                                   </div>
+
                                                  </ul>
                                              </div>
                                           </div>                                     
