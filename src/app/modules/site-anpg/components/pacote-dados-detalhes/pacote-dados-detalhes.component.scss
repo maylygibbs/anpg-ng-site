@@ -13,8 +13,12 @@ ng-image-slider ::ng-deep {
 
 .project-images {
     img {
-        width: 500px;
-        height: 500px;
+        height: 489px;
+        width: 367px;
+        left: 294px;
+        top: 406px;
+        border-radius: 10px;
+        
     }
 }
 #content {
@@ -35,32 +39,48 @@ ng-image-slider ::ng-deep {
     height: 180px;
 }
 
-#project-info {
-    background: rgba(0, 0, 0, 0.3);
+.project-info {
+    background: #ffffff;
     margin: 20px 0;
+    top: 40px;
     padding: 20px 20px 30px;
     position: relative;
 }
 
 .page-section-57 {
-    background: url(/assets/images/Imagem-homepage.png) no-repeat center center / cover;
-    color: #ffffff;
-    background-size: cover;
+    background: #e5e5e5;
 }
+
+.project-title {
+    color: black;
+    font-family: Franklin Gothic Medium;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 73px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+
 
 p {
     text-align: justify !important;
-    font-size: 2ch !important;
+    font-family: Franklin Gothic Book;
+    color: black;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
 }
-
 
 .pricing-table .description {
     background-color: rgba(255, 255, 255, 0.9) !important;
 
     text-align: justify !important;
 
-    font-size: 0.80em !important;
-
+    font-size: 0.8em !important;
 }
-
-

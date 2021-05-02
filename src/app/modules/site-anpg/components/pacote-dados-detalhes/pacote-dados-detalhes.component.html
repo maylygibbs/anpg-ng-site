@@ -1,6 +1,6 @@
 <app-spinner></app-spinner>
 <section class="page-section Portfolio-page page-section-57 page-section-current">
-   <div class="row menu-row">
+   <div class="row menu-row div-continer">
       <div class="large-1 go-back">
          <i class="fa-arrow-left fa icon-x back" routerLink="/anpg/pacotes"></i>
       </div>
@@ -13,217 +13,237 @@
          <a class="showMenu displayMenu search"><i class="fa-search fa icon-x back"></i></a>
       </div>
    </div>
-   <div class="row clear-fix">
+   <div class="row clear-fix div-continer">
       <!-- PORTFOLIO PACOTE DE DADOS -->
       <div class="row portfolio-page">
          <!-- PORTFOLIO PACOTE DE DADOS MENU -->
          <div *ngIf="pacote" style="width: 100%; min-height: 139px; text-align:center;margin:auto; padding:3px;">
-            <ng-image-slider
-            [images]="pacote.groupDocumentsTypes"
-            [infinite]="false"
-            [autoSlide]="1"
-            [imageSize]="{width: '300px', height:'139px'}"
-            (imageClick)="showSectionDocuments($event)" 
-            [imagePopup]='false'
-            slideImage="1" #nav></ng-image-slider>
-        </div>
-         <ul 
-            class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
+            <ng-image-slider [images]="pacote.groupDocumentsTypes" [infinite]="false" [autoSlide]="1"
+               [imageSize]="{width: '300px', height:'139px'}" (imageClick)="showSectionDocuments($event)"
+               [imagePopup]='false' slideImage="1" #nav></ng-image-slider>
+         </div>
+         <ul class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
          </ul>
-         <div *ngIf="pacote && sectionIndex==0" id="project-info">
+         <div *ngIf="pacote && sectionIndex==0" class="project-info">
             <div id="content">
-               <i class="fa-times fa back" (click)="sectionIndex=-1"></i>
-               <div class="scrollable-content">
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">{{pacote.nomePacote}}</h2>
-                     </div>
-                     <div class="large-6 columns">
-                        <div class="project-images">
-                           <div class="item-list">
-                              <ul>
-                                 <li>
-                                    <a href="#">
-                                       <img alt="13tndZF" class="attachment-project-thumb" [src]="pacote.imagemPacote">
-                                    </a>
-                                 </li>
-                              </ul>
-                           </div>
+
+               <!--INFORMACION BASICA -->
+               <div class="row">
+
+                  <div class="large-6 columns">
+                     <div class="project-images">
+                        <div class="item-list">
+                           <ul>
+                              <li>
+                                 <a href="#">
+                                    <img alt="13tndZF" class="attachment-project-thumb" [src]="pacote.imagemPacote">
+                                 </a>
+                              </li>
+                           </ul>
                         </div>
-                     </div>
-                     <div class="large-6 columns project-content">
-                        <p >{{pacote.descricaoPacote}}</p>
                      </div>
                   </div>
-                  <br>
-                  <br>
-                  <!--BLOCOS Y POCOS -->
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">Blocos y Pocos</h2>
-                     </div>
-                     <div class="large-6 columns">
-                        <div class="project-images">
-                           <div class="item-list">
-                              <ul>
-                                 <li>
-                                    <a href="#">
-                                       <img width="450" height="380" alt="13tndZF" class="attachment-project-thumb"
-                                          src="/assets/images/image-pocos.jpeg">
-                                    </a>
-                                 </li>
-                              </ul>
-                           </div>
+                  <div class="large-6 columns project-content">
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <h2 class="project-title">{{pacote.nomePacote}}</h2>
                         </div>
-                     </div>
-                     <div class="large-6 columns project-content">
-                        <div class="row" *ngFor="let bacia of pacote.bacias" style="border: 2px solid whitesmoke; padding-top: 10px;">
-                           <div class="large-12 columns">
-                              <div class="row">
-                                 <div class="large-4 columns">
-                                    <div style="font-size: 1.5em !important;">
-                                       {{bacia.nomeBacia}} 
-                                    </div>
-                                 </div>
-                                 <div class="large-8 columns" *ngFor="let bloco of bacia.blocos">
-                                    <ul class="pricing-table">
-                                       <li class="title">{{bloco.nomeBloco}}</li>
-                                       <li class="description">{{bloco.descripBloco}}</li>
-                                       <li class="bullet-item" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}</li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="large-12 columns">
+                           <p>{{pacote.descricaoPacote}}</p>
                         </div>
-                     </div> 
+
+                     </div>
 
                   </div>
                </div>
+               <br>
+               <br>
+               <!--BLOCOS Y POCOS -->
+               <div class="row">
+                  <div class="large-11 columns">
+                     <h2 class="project-title">Blocos y Pocos</h2>
+                  </div>
+                  <div class="large-6 columns project-content">
+                     <table class="table table-striped" style="color:black">
+                        <thead>
+                           <tr>
+                              <th scope="col">Bacias</th>
+                              <th scope="col">Blocos</th>
+                              <th scope="col">Pocos</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr *ngFor="let bacia of pacote.bacias">
+                              <td>{{bacia.nomeBacia}}</td>
+                              <td colspan="2">
+                                 <table style="color:black">
+                                    <tr *ngFor="let bloco of bacia.blocos">
+                                       <td>{{bloco.nomeBloco}}</td>
+                                       <td>
+                                          <ul>
+                                             <li style="color:black" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                 </table>
+
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="large-6 columns">
+                     <div class="project-images">
+                        <div class="item-list">
+                           <ul>
+                              <li>
+                                 <a href="#">
+                                    <img width="450" height="380" alt="13tndZF" class="attachment-project-thumb"
+                                       src="/assets/images/image-pocos.jpeg">
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+
+
+               </div>
+
             </div>
          </div>
          <div *ngIf="pacote && groupDocumentsSelected && sectionIndex>0" id="project-info">
             <div id="content">
-               <i class="fa-times fa back" (click)="section=-1"></i>
-               <div class="scrollable-content">
-                  <div class="row">
-                     <div class="large-11 columns">
-                        <h2 class="project-title">{{groupDocumentsSelected.tipoDocumento.title}}</h2>
-                     </div>
-                     <br>
-                     <br>
-                     <br>
-                     <br>
-                     <div *ngIf="groupDocumentsSelected.hasPacoteDocuments" class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                    <li class="title">Documentos Pacote</li>
-                                    <li class="bullet-item" *ngFor="let doc of groupDocumentsSelected.documentos">
-                                      <a href="/">{{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
-                                    </li>
-                                 </ul>
-                              </div>
+               <div class="row">
+                  <div class="large-11 columns">
+                     <h2 class="project-title">{{groupDocumentsSelected.tipoDocumento.title}}</h2>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div *ngIf="groupDocumentsSelected.hasPacoteDocuments" class="large-12 columns project-content">
+                     <div class="container">
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <table class="table table-striped" style="color:black">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">Documentos Pacote</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr *ngFor="let doc of groupDocumentsSelected.documentos">
+                                       <td><a href="/">{{doc.nomeDoc}}
+                                          </a></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
                            </div>
                         </div>
                      </div>
-                     <div *ngIf="groupDocumentsSelected.hasBaciasDocuments" class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                    <li class="title">Documentos Bacia</li>
-                                    <div *ngFor="let bacia of groupDocumentsSelected.pacoteBacias">
-                                       <li class="bullet-item" *ngIf="bacia.documentos">
-                                          <div class="row">
-                                             <div class="large-4 columns">
-                                                {{bacia.nomeBacia}}
-                                             </div>
-                                             <div class="large-8 columns">
-                                                <ul>
-                                                   <li *ngFor="let doc of bacia.documentos">
-                                                      <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
-                                                   </li>      
-                                                 </ul>
-                                             </div>
-                                          </div>                                
-                                       </li>
-                                    </div>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div *ngIf="groupDocumentsSelected.hasBlocosDocuments" class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                    <li class="title">Documentos Blocos</li>
-                                    <div *ngFor="let bloco of groupDocumentsSelected.pacoteBlocos">
-                                       <li class="bullet-item" *ngIf="bloco.documentos">
-                                          <div class="row" >
-                                             <div class="large-4 columns">
-                                                {{bloco.nomeBloco}}
-                                             </div>
-                                             <div class="large-8 columns">
-                                                <ul>
-                                                   <li *ngFor="let doc of bloco.documentos">
-                                                      <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
-                                                   </li>      
-                                                 </ul>
-                                             </div>
-                                          </div>                           
-                                       </li>
-                                    </div>
+                  </div>
+                  <div *ngIf="groupDocumentsSelected.hasBaciasDocuments" class="large-12 columns project-content">
+                     <div class="container">
+                        <div class="row">
+                           <div class="large-12 columns">
 
-                                 </ul>
-                              </div>
+                              <table class="table table-striped" style="color:black">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">Bacia</th>
+                                       <th scope="col">Title</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr *ngFor="let bacia of groupDocumentsSelected.pacoteBacias">
+                                       <td *ngIf="bacia.documentos">{{bacia.nomeBacia}}</td>
+                                       <td *ngIf="bacia.documentos">
+                                          <ul>
+                                             <li *ngFor="let doc of bacia.documentos">
+                                                <a href="/">{{doc.nomeDoc}}
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+
                            </div>
                         </div>
-                     </div> 
-                     <div *ngIf="groupDocumentsSelected.hasPocosDocuments" class="large-12 columns project-content">
-                        <div class="container">
-                           <div class="row">
-                              <div class="large-12 columns">
-                                 <ul class="pricing-table">
-                                    <li class="title">Documentos Pocos</li>
-                                    <div *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
-                                       <li class="bullet-item" *ngIf="thisBlocoHasDocuments(bloco)">
-                                          <div class="row" *ngIf="thisBlocoHasDocuments(bloco)">
-                                             <div class="large-4 columns">
-                                                {{bloco.nomeBloco}}
-                                             </div>
-                                             <div class="large-8 columns">
-                                                <ul>
-                                                   <div  *ngFor="let poco of bloco.pocos">
-                                                      <li>
-                                                         <div class="row" *ngIf="poco.documentos">
-                                                            <div class="large-4 columns">
-                                                               {{poco.nomePoco}}
-                                                            </div>
-                                                            <div class="large-8 columns">
-                                                               <ul>
-                                                                  <li *ngFor="let doc of poco.documentos">
-                                                                     <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download" aria-hidden="true"></i> </a> 
-                                                                  </li>
-                                                                </ul>
-                                                            </div>
-                                                         </div>                                                
-   
+                     </div>
+                  </div>
+                  <div *ngIf="groupDocumentsSelected.hasBlocosDocuments" class="large-12 columns project-content">
+                     <div class="container">
+                        <div class="row">
+                           <div class="large-12 columns">
+
+                              <table class="table table-striped" style="color:black">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">Bloco</th>
+                                       <th scope="col">Title</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr *ngFor="let bloco of groupDocumentsSelected.pacoteBlocos">
+                                       <td *ngIf="bloco.documentos">{{bloco.nomeBloco}}</td>
+                                       <td *ngIf="bloco.documentos">
+                                          <ul>
+                                             <li *ngFor="let doc of bloco.documentos">
+                                                <a href="/">{{doc.nomeDoc}}
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div *ngIf="groupDocumentsSelected.hasPocosDocuments" class="large-12 columns project-content">
+                     <div class="container">
+                        <div class="row">
+                           <div class="large-12 columns">
+
+                              <table class="table table-striped" style="color:black">
+                                 <thead>
+                                    <tr>
+                                       <th scope="col">Bloco</th>
+                                       <th scope="col">Poco</th>
+                                       <th scope="col">Title</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
+                                       <td *ngIf="thisBlocoHasDocuments(bloco)">{{bloco.nomeBloco}}</td>
+                                       <td colspan="2" *ngIf="thisBlocoHasDocuments(bloco)">
+
+                                          <table style="color:black">
+                                             <tr *ngFor="let poco of bloco.pocos">
+                                                <td *ngIf="poco.documentos"> {{poco.nomePoco}}</td>
+                                                <td *ngIf="poco.documentos">
+                                                   <ul>
+                                                      <li *ngFor="let doc of poco.documentos">
+                                                         <a href="/"> {{doc.nomeDoc}} <i class="fa fa-download"
+                                                               aria-hidden="true"></i> </a>
                                                       </li>
-                                                   </div>
+                                                   </ul>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
 
-                                                 </ul>
-                                             </div>
-                                          </div>                                     
-                                       </li>
-                                    </div>
-                                 </ul>
-                              </div>
                            </div>
                         </div>
-                     </div>                                          
+                     </div>
                   </div>
                </div>
             </div>

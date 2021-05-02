@@ -227,7 +227,7 @@ article.type-post .field-name-field-blog-tags .links > li a {
 }  
 
 /*-------------- Portfolio Page ----------------------*/
-#project-info {
+.project-info {
   background: rgba(0, 0, 0, 0.1);
   margin: 20px;
   padding: 30px;

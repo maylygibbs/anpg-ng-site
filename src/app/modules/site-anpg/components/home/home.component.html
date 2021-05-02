@@ -1,7 +1,7 @@
 <app-spinner></app-spinner>
 <section class="page-section home-page page-section-current">
    <div class="background-continer">
-      <div class="row metro-panel">
+      <div class="row metro-panel div-continer">
          <div class="large-12 columns">
             <div class="row menu-row">
                <div class="large-8 columns">
@@ -34,73 +34,6 @@
                               <span class='box-title'>{{items[1].label}}</span>
                               <br />
                               <i class='fa-users fa fa-4x'></i>
-                           </a>
-                        </div>
-                     </div>
-                     <div class='twelve large-12 columns space testimonials-box medium'>
-                        <div class='color-3' [style]="'background:'+items[2].color">
-                           <span class='box-title anim'>{{items[2].label}}</span>
-                           <ul class='testimonials'>
-                              <li>
-                                 <blockquote>
-                                    <p>To awaken interest and kindle enthusiasm is the sure way to teach easily and
-                                       successfully.</p>
-                                    <cite>Tryon Edwards</cite>
-                                 </blockquote>
-                              </li>
-                              <li>
-                                 <blockquote>
-                                    <p>Any genuine teaching will result, if successful, in knowing how to bring about a
-                                       better condition of things than existed earlier.</p>
-                                    <cite>John Dewey</cite>
-                                 </blockquote>
-                              </li>
-                              <li>
-                                 <blockquote>
-                                    <p>One looks back with appreciation to the brilliant teachers, but with gratitude to
-                                       those who touched our human feelings.</p>
-                                    <cite>Carl Jung</cite>
-                                 </blockquote>
-                              </li>
-                              <li>
-                                 <blockquote>
-                                    <p>The art of handling university students is to make oneself appear, and this
-                                       almost ostentatiously, to be treating them as adults&#8230;</p>
-                                    <cite>Arnold Joseph Toynbee</cite>
-                                 </blockquote>
-                              </li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class='twelve large-12 columns space featured blog-box medium'>
-                        <div class='color-4' [style]="'background:'+items[3].color"> <span class='box-title anim'>{{items[3].label}}</span>
-                           <span class='featured-image'>
-                              <img width="400" height="400" src="assets/images/1.jpg" alt="some tile" />
-                           </span>
-                           <span class='featured-box-title'>
-                              <a href='#'>Cassettiera 3 cass noce</a>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="four large-4 columns">
-                  <div class="row">
-                     <div class='six small-6 columns contact-box space'>
-                        <div class='color-5' [style]="'background:'+items[4].color">
-                           <a [href]="items[4].href">
-                              <span class='box-title'>{{items[4].label}}</span>
-                              <br />
-                              <i class='fa-facebook fa fa-4x'></i>
-                           </a>
-                        </div>
-                     </div>
-                     <div class='six small-6 columns contact-box space'>
-                        <div class='color-6' [style]="'background:'+items[5].color">
-                           <a [href]="items[5].href" >
-                              <span class='box-title'>{{items[5].label}}</span>
-                              <br />
-                              <i class='fa-twitter fa fa-4x'></i>
                            </a>
                         </div>
                      </div>
@@ -153,6 +86,73 @@
                                  </li>
                               </ul>
                            </div>
+                        </div>
+                     </div>               
+                  </div>
+               </div>
+               <div class="four large-4 columns">
+                  <div class="row">
+                     <div class='six small-6 columns contact-box space'>
+                        <div class='color-5' [style]="'background:'+items[4].color">
+                           <a [href]="items[4].href">
+                              <span class='box-title'>{{items[4].label}}</span>
+                              <br />
+                              <i class='fa-facebook fa fa-4x'></i>
+                           </a>
+                        </div>
+                     </div>
+                     <div class='six small-6 columns contact-box space'>
+                        <div class='color-6' [style]="'background:'+items[5].color">
+                           <a [href]="items[5].href" >
+                              <span class='box-title'>{{items[5].label}}</span>
+                              <br />
+                              <i class='fa-twitter fa fa-4x'></i>
+                           </a>
+                        </div>
+                     </div>
+                     <div class='twelve large-12 columns space testimonials-box medium'>
+                        <div class='color-3' [style]="'background:'+items[2].color">
+                           <span class='box-title anim'>{{items[2].label}}</span>
+                           <ul class='testimonials'>
+                              <li>
+                                 <blockquote>
+                                    <p>To awaken interest and kindle enthusiasm is the sure way to teach easily and
+                                       successfully.</p>
+                                    <cite>Tryon Edwards</cite>
+                                 </blockquote>
+                              </li>
+                              <li>
+                                 <blockquote>
+                                    <p>Any genuine teaching will result, if successful, in knowing how to bring about a
+                                       better condition of things than existed earlier.</p>
+                                    <cite>John Dewey</cite>
+                                 </blockquote>
+                              </li>
+                              <li>
+                                 <blockquote>
+                                    <p>One looks back with appreciation to the brilliant teachers, but with gratitude to
+                                       those who touched our human feelings.</p>
+                                    <cite>Carl Jung</cite>
+                                 </blockquote>
+                              </li>
+                              <li>
+                                 <blockquote>
+                                    <p>The art of handling university students is to make oneself appear, and this
+                                       almost ostentatiously, to be treating them as adults&#8230;</p>
+                                    <cite>Arnold Joseph Toynbee</cite>
+                                 </blockquote>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class='twelve large-12 columns space featured blog-box medium'>
+                        <div class='color-4' [style]="'background:'+items[3].color"> <span class='box-title anim'>{{items[3].label}}</span>
+                           <span class='featured-image'>
+                              <img width="400" height="400" src="assets/images/1.jpg" alt="some tile" />
+                           </span>
+                           <span class='featured-box-title'>
+                              <a href='#'>Cassettiera 3 cass noce</a>
+                           </span>
                         </div>
                      </div>
                   </div>

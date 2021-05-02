@@ -26,10 +26,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('anpg-ng-site');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('anpg-ng-site app is running!');
-  });
 });

@@ -14,6 +14,7 @@ import { DocumentTypeService } from './core/services/document-type.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +23,8 @@ import { DocumentTypeService } from './core/services/document-type.service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true},

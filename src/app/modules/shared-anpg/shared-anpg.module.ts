@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -15,8 +16,9 @@ import { NgImageSliderModule } from 'ng-image-slider';
     CommonModule,
     RouterModule,
     NgxSpinnerModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    NgbModule
   ],
-  exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent, NgImageSliderModule]
+  exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent, NgImageSliderModule, NgbModule]
 })
 export class SharedAnpgModule { }
