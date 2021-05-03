@@ -3,6 +3,7 @@
 
 /* fonts */
 @import 'assets/css/font-awesome-4-menus/css/font-awesome.min.css';
+@import 'assets/css/anpg-site-icon-font/css/anpg-site-icon-font.css';
 @import 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700';
 
 /* css */
@@ -16,7 +17,7 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-
+/* style for animation enter pages*/
 router-outlet ~ * {
     position: absolute;
     height: 100%;
