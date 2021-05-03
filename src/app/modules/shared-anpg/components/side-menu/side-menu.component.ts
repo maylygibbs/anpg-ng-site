@@ -16,8 +16,6 @@ export class SideMenuComponent implements OnInit {
   private $items: Subscription;
 
   constructor(private menuService: MenuService) { 
-    let item:Array<MenuItem> = smenu;
-    this.menuService.setSideMenu(smenu);
   }
 
   ngOnInit(): void {

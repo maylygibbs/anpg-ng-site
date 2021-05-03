@@ -16,6 +16,7 @@ export class MenuItem extends Model {
   public className: string;
   public color: string;
   public target: string;
+  public background: string;
 
   /** for imagen slider */
   public image: 'assets/img/flags/ad.png';
