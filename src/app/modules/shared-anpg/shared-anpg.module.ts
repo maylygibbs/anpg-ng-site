@@ -8,6 +8,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +20,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterModule,
     NgxSpinnerModule,
     NgImageSliderModule,
-    NgbModule
+    NgbModule,
+    TranslateModule.forChild({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: (http: HttpClient)=>{
+          return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+        },
+        deps: [ HttpClient ]
+      },
+      isolate:false
+    })
   ],
   exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent, NgImageSliderModule, NgbModule]
 })
