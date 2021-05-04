@@ -14,12 +14,10 @@ export class AppComponent {
     this.initializeApp();
   }
 
-
+/**
+ * Set default lenguage to pt (portugues)
+ */
   initializeApp() {
-
     this.translateService.setDefaultLang('pt_PT');
-    //this.translateService.setDefaultLang('en_US');
-    //this.translateService.use('pt_PT');
-
   }
 }

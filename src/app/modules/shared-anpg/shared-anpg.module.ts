@@ -25,7 +25,7 @@ import { HttpClient } from '@angular/common/http';
       loader:{
         provide: TranslateLoader,
         useFactory: (http: HttpClient)=>{
-          return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+          return new TranslateHttpLoader(http, './assets/i18n/','.json');
         },
         deps: [ HttpClient ]
       },

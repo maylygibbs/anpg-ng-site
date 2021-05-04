@@ -34,7 +34,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         },
         deps: [ HttpClient ]
       }
-
     })
 
   ],
