@@ -1,5 +1,31 @@
 {
   "home": {
     "title":"Plataforma"
+  },
+  "pacote_dados": {
+    "title":"Pacotes de Dados"
+  },
+  "sobre_os_dados": {
+    "title":"Sobre os Dados"
+  },
+  "gestao_de_dados":{
+    "title":"Gestão de Dados"
+  },
+  "redep":{
+    "title":"REDEP"
+  },
+  "vdr":{
+    "title":"VDR"
+  },
+  "dados_publicos":{
+    "title":"Dados Públicos"
+  },
+  "faqs":{
+    "title":"FAQS"
+  },
+  "contacto":{
+    "title":"Contacto"
   }
+
+
 }

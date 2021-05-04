@@ -63,7 +63,9 @@ export class MenuService extends HttpService {
             const menu = new MenuItem();
             menu.label = item.Rotulo;
             menu.href = item.Href;
-            menu.color = item.Color; 
+            const colorArray = item.Color.split("|");
+            menu.color = colorArray[1]; 
+            menu.background = colorArray[0];
             return menu;
           });
         }
