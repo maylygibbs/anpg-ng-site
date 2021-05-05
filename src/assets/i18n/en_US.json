@@ -1,9 +1,24 @@
 {
   "home": {
-    "title":"Plataforma"
+    "title":"Plataform"
   },
-  "pacote_dados": {
+  "pacotes_dados": {
     "title":"Data Packs"
+  },
+  "pacotes_dados_detalhe": {
+    "title":"Data Pack",
+    "bacia":{
+      "title": "Bacia",
+      "label_doc": "Title"
+     },
+     "bloco":{
+      "title": "Bloco",
+      "label_doc": "Title"
+     },
+     "poco":{
+      "title": "Poco",
+      "label_doc": "Title"
+     }
   },
   "sobre_os_dados": {
     "title":"About the Data"

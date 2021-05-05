@@ -70,14 +70,17 @@ export class PacoteDadosDetalhesComponent implements OnInit {
     }
   }
 
-  thisBlocoHasDocuments(boco: Bloco):boolean{
+  thisBlocoHasDocuments(bloco: Bloco):boolean{
     let hasDocuments = false;
+    if(bloco.pocos && bloco.pocos.length > 0){
+      bloco.pocos.forEach(element => {
+        if (element.documentos){
+          hasDocuments = true;
+        }
+      });
+    }
     
-    boco.pocos.forEach(element => {
-      if (element.documentos){
-        hasDocuments = true;
-      }
-    });
+
 
     return hasDocuments;
 

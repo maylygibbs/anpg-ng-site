@@ -32,6 +32,13 @@ import { HttpClient } from '@angular/common/http';
       isolate:false
     })
   ],
-  exports:[UiSiteAnpgLayoutComponent, NgxSpinnerModule, SpinnerComponent, NgImageSliderModule, NgbModule]
+  exports:[
+    UiSiteAnpgLayoutComponent, 
+    NgxSpinnerModule, 
+    SpinnerComponent, 
+    NgImageSliderModule, 
+    NgbModule,
+    TranslateModule
+  ]
 })
 export class SharedAnpgModule { }

@@ -1,8 +1,10 @@
+import { BaseComponent } from './../base.component';
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import { MenuService } from '../../../../core/services/menu.service';
 import { MenuItem } from '../../../../core/models/menu-item';
-import { menu as smenu} from '../../../site-anpg/utils/side-menu';
+import { TranslateService } from '@ngx-translate/core';
+
 
 
 @Component({
@@ -10,12 +12,14 @@ import { menu as smenu} from '../../../site-anpg/utils/side-menu';
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss']
 })
-export class SideMenuComponent implements OnInit {
+export class SideMenuComponent extends BaseComponent implements OnInit {
 
   public items = new Array<MenuItem>();
   private $items: Subscription;
 
-  constructor(private menuService: MenuService) { 
+  constructor(private menuService: MenuService,
+    protected translateService: TranslateService) { 
+      super(translateService)
   }
 
   ngOnInit(): void {

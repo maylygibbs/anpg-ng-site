@@ -5,7 +5,7 @@
          <i class="fa-arrow-left fa icon-x back" routerLink="/anpg/pacotes"></i>
       </div>
       <div class="large-7 columns p-l-0 content-title">
-         <h1 class="site-name">Pacote de Dados</h1>
+         <h1 class="site-name" translate>pacotes_dados_detalhe.title</h1>
       </div>
       <div class="large-4 columns menu-button text-right">
          <a class="showMenu" routerLink="/"><i class="fa-home fa icon-x back"></i></a>
@@ -61,15 +61,15 @@
                <!--BLOCOS Y POCOS -->
                <div class="row">
                   <div class="large-11 columns">
-                     <h2 class="project-title">Blocos y Pocos</h2>
+                     <h2 class="project-title">{{pacote.nomePacote}}</h2>
                   </div>
                   <div class="large-6 columns project-content">
                      <table class="table table-striped" style="color:black">
                         <thead>
                            <tr>
-                              <th scope="col">Bacias</th>
-                              <th scope="col">Blocos</th>
-                              <th scope="col">Pocos</th>
+                              <th scope="col" translate>pacotes_dados_detalhe.bacia.title</th>
+                              <th scope="col" translate>pacotes_dados_detalhe.bloco.title</th>
+                              <th scope="col" translate>pacotes_dados_detalhe.poco.title</th>
                            </tr>
                         </thead>
                         <tbody>
@@ -152,8 +152,8 @@
                               <table class="table table-striped" style="color:black">
                                  <thead>
                                     <tr>
-                                       <th scope="col">Bacia</th>
-                                       <th scope="col">Title</th>
+                                       <th scope="col" translate>pacotes_dados_detalhe.bacia.title</th>
+                                       <th scope="col" translate>pacotes_dados_detalhe.bacia.label_doc</th>
                                     </tr>
                                  </thead>
                                  <tbody>
@@ -183,8 +183,8 @@
                               <table class="table table-striped" style="color:black">
                                  <thead>
                                     <tr>
-                                       <th scope="col">Bloco</th>
-                                       <th scope="col">Title</th>
+                                       <th scope="col" translate>pacotes_dados_detalhe.bloco.title</th>
+                                       <th scope="col" translate>pacotes_dados_detalhe.bloco.label_doc</th>
                                     </tr>
                                  </thead>
                                  <tbody>
@@ -213,9 +213,9 @@
                               <table class="table table-striped" style="color:black">
                                  <thead>
                                     <tr>
-                                       <th scope="col">Bloco</th>
-                                       <th scope="col">Poco</th>
-                                       <th scope="col">Title</th>
+                                       <th scope="col" translate> pacotes_dados_detalhe.bloco.title </th>
+                                       <th scope="col" translate> pacotes_dados_detalhe.poco.title </th>
+                                       <th scope="col" translate> pacotes_dados_detalhe.bloco.label_doc </th>
                                     </tr>
                                  </thead>
                                  <tbody>

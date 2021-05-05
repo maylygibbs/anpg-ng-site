@@ -2,8 +2,23 @@
   "home": {
     "title":"Plataforma"
   },
-  "pacote_dados": {
+  "pacotes_dados": {
     "title":"Pacotes de Dados"
+  },
+  "pacotes_dados_detalhe": {
+    "title":"Pacote de Dados",
+    "bacia":{
+      "title": "Bacia",
+      "label_doc": "Titulo"
+     },
+     "bloco":{
+      "title": "Bloco",
+      "label_doc": "Titulo"
+     },
+     "poco":{
+      "title": "Poco",
+      "label_doc": "Titulo"
+     }
   },
   "sobre_os_dados": {
     "title":"Sobre os Dados"
