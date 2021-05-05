@@ -1,15 +1,16 @@
 <nav class="vertical-menu close on-hover-show">
-    <h3 class="text-center">
-       <a routerLink="/">icons lenguages</a>
-    </h3>
+   <div class="text-right languague-toolbar">
+      <a routerLink="/" class="flag-icon"><img src="/assets/images/Bandeira_UK.png"></a>
+      <a routerLink="/" class="flag-icon"><img src="/assets/images/bandeira_AO.png"></a>
+   </div>
 
-    <br/>
-    <br/>
-    <div class="menu-menu-1-container">
-       <ul id="menu-menu-1" class="menu-list">
-          <li *ngFor='let item of items'>
-             <a [routerLink]="item.href"><i [class]="'anpg '+item.className" [style]="'color:'+item.Color"></i>{{item.label}}</a>
-          </li>
-       </ul>
-    </div>
- </nav>
+   <br/>
+   <div class="menu-menu-1-container">
+      <ul id="menu-menu-1" class="menu-list">
+         <li *ngFor='let item of items'>
+            <a [routerLink]="item.href"><i [class]="item.className" [style]="'color:'+item.Color"></i>{{item.label}}</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+
