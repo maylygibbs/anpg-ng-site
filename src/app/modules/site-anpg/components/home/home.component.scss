@@ -29,9 +29,9 @@ img, object, embed {
 }
 
 .home-page .showMenu.hamburger  {
-    height: 30px;
-    border: 2px solid #7F1F18;
-    width: 30px;
+    height: 33px;
+    border: 5px solid #7F1F18;
+    width: 33px;
     position: relative;
     display: inline-block;
     border-radius: 100%;
@@ -41,6 +41,7 @@ img, object, embed {
 .home-page .showMenu i.demo-icon {
     color: #7F1F18;
     font-size: 16px;
+    margin: auto;
 }
 
 .dots-archive-solid:before{
