@@ -20,7 +20,7 @@
 }
 */
  
- [class^="icon-"]:before, [class*=" icon-"]:before {
+ [class^="anpg icon-"]:before, [class*=" anpg icon-"]:before {
   font-family: "anpg-site-icon-font";
   font-style: normal;
   font-weight: normal;
@@ -54,23 +54,23 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-archive-solid:before { content: '\e800'; } /* '' */
-.icon-arrow-circle-left-solid:before { content: '\e801'; } /* '' */
-.icon-arrow-left-solid:before { content: '\e802'; } /* '' */
-.icon-bars-solid:before { content: '\e803'; } /* '' */
-.icon-cloud-solid:before { content: '\e804'; } /* '' */
-.icon-database-solid:before { content: '\e805'; } /* '' */
-.icon-file-contract-solid:before { content: '\e806'; } /* '' */
-.icon-flag-solid:before { content: '\e807'; } /* '' */
-.icon-hand-paper-solid:before { content: '\e808'; } /* '' */
-.icon-home-solid:before { content: '\e809'; } /* '' */
-.icon-map-marker-alt-solid:before { content: '\e80a'; } /* '' */
-.icon-power-off-solid:before { content: '\e80b'; } /* '' */
-.icon-product-hunt-brands:before { content: '\e80c'; } /* '' */
-.icon-search-solid:before { content: '\e80d'; } /* '' */
-.icon-search-location-solid:before { content: '\e80e'; } /* '' */
-.icon-swatchbook-solid:before { content: '\e80f'; } /* '' */
-.icon-tasks-solid:before { content: '\e810'; } /* '' */
-.icon-user-solid:before { content: '\e811'; } /* '' */
-.icon-users-solid:before { content: '\e812'; } /* '' */
-.icon-video-solid:before { content: '\e813'; } /* '' */
+.anpg.icon-archive-solid:before { content: '\e800'; } /* '' */
+.anpg.icon-arrow-circle-left-solid:before { content: '\e801'; } /* '' */
+.anpg.icon-arrow-left-solid:before { content: '\e802'; } /* '' */
+.anpg.icon-bars-solid:before { content: '\e803'; } /* '' */
+.anpg.icon-cloud-solid:before { content: '\e804'; } /* '' */
+.anpg.icon-database-solid:before { content: '\e805'; } /* '' */
+.anpg.icon-file-contract-solid:before { content: '\e806'; } /* '' */
+.anpg.icon-flag-solid:before { content: '\e807'; } /* '' */
+.anpg.icon-hand-paper-solid:before { content: '\e808'; } /* '' */
+.anpg.icon-home-solid:before { content: '\e809'; } /* '' */
+.anpg.icon-map-marker-alt-solid:before { content: '\e80a'; } /* '' */
+.anpg.icon-power-off-solid:before { content: '\e80b'; } /* '' */
+.anpg.icon-product-hunt-brands:before { content: '\e80c'; } /* '' */
+.anpg.icon-search-solid:before { content: '\e80d'; } /* '' */
+.anpg.icon-search-location-solid:before { content: '\e80e'; } /* '' */
+.anpg.icon-swatchbook-solid:before { content: '\e80f'; } /* '' */
+.anpg.icon-tasks-solid:before { content: '\e810'; } /* '' */
+.anpg.icon-user-solid:before { content: '\e811'; } /* '' */
+.anpg.icon-users-solid:before { content: '\e812'; } /* '' */
+.anpg.icon-video-solid:before { content: '\e813'; } /* '' */
