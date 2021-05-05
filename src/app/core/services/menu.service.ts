@@ -52,7 +52,7 @@ export class MenuService extends HttpService {
    * @param lenguage 
    * @param location 
    */
-  getHomeItemMenu(lenguage:number):Promise<Array<MenuItem>>{
+  getHomeItemMenu(lenguage:string):Promise<Array<MenuItem>>{
     let options:Array<MenuItem>;
     return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/center`).toPromise().then(
       (resp:any)=>{ 
@@ -79,7 +79,7 @@ export class MenuService extends HttpService {
    * @param lenguage 
    * @param location 
    */
-  getSideItemMenu(lenguage:number):Promise<Array<MenuItem>>{
+  getSideItemMenu(lenguage:string):Promise<Array<MenuItem>>{
     let options:Array<MenuItem>;
     return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/side`).toPromise().then(
       (resp:any)=>{ 

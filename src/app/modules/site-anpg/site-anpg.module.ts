@@ -6,6 +6,7 @@ import { AboutComponent } from './components/about/about.component';
 import { PacotesDadosComponent } from './components/pacotes-dados/pacotes-dados.component';
 import { SharedAnpgModule } from '../shared-anpg/shared-anpg.module';
 import { PacoteDadosDetalhesComponent } from './components/pacote-dados-detalhes/pacote-dados-detalhes.component';
+import { ErrorComponent } from './components/error/error.component';
 
 /** Module site publico Plataforma Dados E&P */
 @NgModule({
@@ -13,7 +14,7 @@ import { PacoteDadosDetalhesComponent } from './components/pacote-dados-detalhes
     HomeComponent, 
     AboutComponent, 
     PacotesDadosComponent, 
-    PacoteDadosDetalhesComponent],
+    PacoteDadosDetalhesComponent, ErrorComponent],
   imports: [
     CommonModule,
     SharedAnpgModule,

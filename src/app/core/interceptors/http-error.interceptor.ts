@@ -20,7 +20,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(catchError( (error:HttpErrorResponse)=>{  
  
       if (error.status === 404) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/anpg/error']);
       }
       return throwError(error);
 

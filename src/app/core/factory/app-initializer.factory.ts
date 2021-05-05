@@ -3,12 +3,12 @@ import { MenuService } from "../services/menu.service";
 
 export function homeMenuProviderFactory(
     menuService:MenuService){
-    return () => menuService.getHomeItemMenu(20);
+    return () => menuService.getHomeItemMenu('pt');
 }
 
 export function sideMenuProviderFactory(
     menuService:MenuService){
-    return () => menuService.getSideItemMenu(20);
+    return () => menuService.getSideItemMenu('pt');
 }
 
 export function documentTypeProviderFactory(
