@@ -10,3 +10,43 @@ img, object, embed {
    margin-top: 0px!important;
    margin-bottom: 0px !important;
 }
+
+.logo-anpg img {
+    width: 120px;
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.home-page i.demo-icon {
+    font-size: 34px;
+}
+
+.home-page span.box-title {
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    left: 0!important;
+}
+
+.home-page .showMenu.hamburger  {
+    height: 30px;
+    border: 2px solid #7F1F18;
+    width: 30px;
+    position: relative;
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.home-page .showMenu i.demo-icon {
+    color: #7F1F18;
+    font-size: 16px;
+}
+
+.dots-archive-solid:before{
+    content: "•••";
+    font-size: 24px;
+    margin-top: 2px;
+    font-style: initial;
+    list-style: none;
+}

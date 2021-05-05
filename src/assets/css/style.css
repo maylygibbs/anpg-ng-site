@@ -100,7 +100,7 @@
   z-index: 1000;
   transition: all 0.3s ease 0s;
   width: 332px;
-  background: none repeat scroll 0 0 rgba(59, 56, 57);
+  background: none repeat scroll 0 0 #7F1F18;
   position: fixed;
   padding: 0;
   overflow: auto;
@@ -157,7 +157,9 @@
 }
 .vertical-menu .menu-list a:hover,
 .vertical-menu .menu-list a.active {
-  background: #4718b6;
+  background: #771710;
+  text-decoration:none;
+  color: white;
 }
 .vertical-menu .menu-list li i {
   display: inline-block;
@@ -165,10 +167,17 @@
   width: 41px;
   margin-right: 11px;
   text-align: center;
-  background: #ac193d;
+  background: white;
   padding: 11px;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3) inset;
+  border-radius: 4px;
+  color: #7F1F18;
 }
+
+#menu-menu-1 {
+  margin-left: 0;
+}
+
 .vertical-menu form .container-inline {
   position: relative;
   margin: 0 26px 0 38px;
@@ -224,6 +233,17 @@
   padding: 16px 20px;
 }
 
+.languague-toolbar {
+  background-color: #000;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+.languague-toolbar .flag-icon {
+display: flex;
+padding-right: 10px;
+padding-left: 10px;
+}
 /*------------------------- Home page ---------------------*/
 .row.metro-panel {
   margin-top: 40px;
@@ -250,6 +270,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 .metro-panel .space.big > div {
   min-height: 320px;
@@ -394,16 +415,7 @@
 }
 
 .background-continer {
-  background: linear-gradient(
-    180deg,
-    rgba(59, 56, 57, 0.9) 10%,
-    rgba(199, 132, 134, 0.5) 25%,
-    rgba(128, 54, 54, 0.9) 40%,
-    rgba(128, 31, 31, 0.9) 100%
-  );
-  width: 100%;
-  height: 100%;
-  padding-top: 60px;
+  background: #ffffff87;
 }
 
 /*--------------------------------- Latest Tweets ---------------------------------------*/
@@ -1075,7 +1087,7 @@ textarea:focus {
   background: rgba(0, 0, 0, 0.4);
   display: block;
   font-size: 18px;
-  margin: 0 0 -18px -15px;
+  margin: 0 0 -18px 0px;
   padding: 6px 6px 8px 15px;
   text-align: left;
   width: 100%;

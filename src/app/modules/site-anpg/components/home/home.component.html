@@ -5,12 +5,15 @@
          <div class="large-12 columns">
             <div class="row menu-row">
                <div class="large-8 columns">
+                 <div class="logo-anpg">
+                    <img src="../../../../../assets/images/ANPG LOGO-02.png">
+                 </div>
                   <h1 class="site-name">
                      <a routerLink="/">Plataforma de Dados E&P</a>
                   </h1>
                </div>
                <div class="large-4 columns menu-button text-right">
-                  <a class="showMenu displayMenu"><i class="fa-bars fa icon-x back"></i></a>
+                  <a class="showMenu hamburger displayMenu"><i class="demo-icon icon-bars-solid"></i></a>
                   <a class="showMenu displayMenu search"><i class="fa-search fa icon-x back"></i></a>
                </div>
             </div>
@@ -24,7 +27,7 @@
                            <a [routerLink]="items[0].href">
                               <span class='box-title'>{{items[0].label}}</span>
                               <br />
-                              <i class='fa-comment fa fa-4x'></i>
+                              <i class='demo-icon icon-database-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -33,7 +36,7 @@
                            <a [routerLink]="items[1].href">
                               <span class='box-title'>{{items[1].label}}</span>
                               <br />
-                              <i class='fa-users fa fa-4x'></i>
+                              <i class='demo-icon icon-tasks-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -97,7 +100,7 @@
                            <a [href]="items[4].href">
                               <span class='box-title'>{{items[4].label}}</span>
                               <br />
-                              <i class='fa-facebook fa fa-4x'></i>
+                              <i class='demo-icon icon-flag-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -106,7 +109,7 @@
                            <a [href]="items[5].href" >
                               <span class='box-title'>{{items[5].label}}</span>
                               <br />
-                              <i class='fa-twitter fa fa-4x'></i>
+                              <i class='demo-icon icon-map-marker-alt-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -164,7 +167,9 @@
                            <a [routerLink]="items[6].href">
                               <span class='box-title'>{{items[6].label}}</span>
                               <br />
-                              <i class='fa-folder-open fa fa-4x'></i>
+                              <i class='demo-icon anpg icon-archive-solid'></i>
+                              <i class="dots-archive-solid"></i>
+                              <i class='demo-icon icon-archive-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -173,7 +178,7 @@
                            <a [routerLink]="items[7].href">
                               <span class='box-title'>{{items[7].label}}</span>
                               <br />
-                              <i class='fa-briefcase fa fa-4x'></i>
+                              <i class='demo-icon icon-video-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -181,7 +186,7 @@
                         <div class='color-10' [style]="'background:'+items[8].background">
                            <a [routerLink]="items[8].href"> <span class='box-title'>{{items[8].label}}</span>
                               <br />
-                              <i class='fa-envelope fa fa-4x'></i>
+                              <i class='demo-icon icon-users-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -190,7 +195,7 @@
                            <a [routerLink]="items[9].href">
                               <span class='box-title'>{{items[9].label}}</span>
                               <br />
-                              <i class='fa-comments-o fa fa-4x'></i>
+                              <i class='fa-question fa fa-4x'></i>
                            </a>
                         </div>
                      </div>
@@ -199,7 +204,7 @@
                            <a [routerLink]="items[10].href">
                               <span class='box-title'>{{items[10].label}}</span>
                               <br />
-                              <i class='fa-puzzle-piece fa fa-4x'></i>
+                              <i class='fa-edit fa fa-4x'></i>
                            </a>
                         </div>
                      </div>

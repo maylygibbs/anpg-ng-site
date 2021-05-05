@@ -5,6 +5,19 @@
 @import 'assets/css/font-awesome-4-menus/css/font-awesome.min.css';
 @import 'assets/css/anpg-site-icon-font/css/anpg-site-icon-font.css';
 @import 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,700';
+@font-face {
+  font-family: 'franklin-gothic';
+  src: url("../src/assets/fonts/FRABK.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block; }
+ @font-face {
+  font-family: 'franklin-gothic';
+  src: url("../src/assets/fonts/FRADM.TTF") format("truetype");
+  font-weight:bold;
+  font-style: normal;
+  font-display: block; }
+
 
 /* css */
 @import 'assets/css/style.css';
@@ -23,4 +36,11 @@ router-outlet ~ * {
     height: 100%;
     width: 100%;
   }
-
+/* Global styles for texts*/
+p,span,a,h1,h2,h3,h4,h5,h6,small {
+  font-family: 'franklin-gothic';
+  font-weight: 400;
+}
+a:hover {
+  text-decoration: none;
+}
