@@ -1,6 +1,5 @@
 <app-spinner></app-spinner>
 <section class="page-section home-page page-section-current">
-   <div class="background-continer">
       <div class="row metro-panel div-continer">
          <div class="large-12 columns">
             <div class="row menu-row">
@@ -12,8 +11,8 @@
                      <a routerLink="/" translate>home.title</a>
                   </h1>
                </div>
-               <div class="large-4 columns menu-button text-right">
-                  <a class="showMenu hamburger displayMenu"><i class="demo-icon icon-bars-solid"></i></a>
+               <div class="large-4 columns menu-button text-right bar-btn">
+                  <a class="showMenu displayMenu"><i class="fa-bars fa icon-x back"></i></a>
                </div>
             </div>
             <div *ngIf="items && items.length>0" class="row content">
@@ -26,7 +25,7 @@
                            <a [routerLink]="items[0].href">
                               <span class='box-title'>{{items[0].label}}</span>
                               <br />
-                              <i class='demo-icon icon-database-solid'></i>
+                              <i class='demo-icon anpg icon-database-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -35,7 +34,7 @@
                            <a [routerLink]="items[1].href">
                               <span class='box-title'>{{items[1].label}}</span>
                               <br />
-                              <i class='demo-icon icon-tasks-solid'></i>
+                              <i class='demo-icon anpg icon-tasks-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -99,7 +98,7 @@
                            <a [href]="items[4].href">
                               <span class='box-title'>{{items[4].label}}</span>
                               <br />
-                              <i class='demo-icon icon-flag-solid'></i>
+                              <i class='demo-icon anpg icon-flag-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -108,7 +107,7 @@
                            <a [href]="items[5].href" >
                               <span class='box-title'>{{items[5].label}}</span>
                               <br />
-                              <i class='demo-icon icon-map-marker-alt-solid'></i>
+                              <i class='demo-icon anpg icon-map-marker-alt-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -168,7 +167,7 @@
                               <br />
                               <i class='demo-icon anpg icon-archive-solid'></i>
                               <i class="dots-archive-solid"></i>
-                              <i class='demo-icon icon-archive-solid'></i>
+                              <i class='demo-icon anpg icon-archive-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -177,7 +176,7 @@
                            <a [routerLink]="items[7].href">
                               <span class='box-title'>{{items[7].label}}</span>
                               <br />
-                              <i class='demo-icon icon-video-solid'></i>
+                              <i class='demo-icon anpg icon-video-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -185,7 +184,7 @@
                         <div class='color-10' [style]="'background:'+items[8].background">
                            <a [routerLink]="items[8].href"> <span class='box-title'>{{items[8].label}}</span>
                               <br />
-                              <i class='demo-icon icon-users-solid'></i>
+                              <i class='demo-icon anpg icon-users-solid'></i>
                            </a>
                         </div>
                      </div>
@@ -212,9 +211,8 @@
                <div id="after-tiles" class="large-12 columns">
                </div>
             </div>
-            <div class="copyright">© 2021 ANPG All rights reserved.</div>
+           <div class="copyright">© 2021 ANPG All rights reserved.</div>
          </div>
       </div>
-   </div>
-
+ 
 </section>

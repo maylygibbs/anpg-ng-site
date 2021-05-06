@@ -1,7 +1,11 @@
 .page-section{
     padding: 0px !important;
 }
-
+.home-page.page-section {
+    background-color: white!important;   
+    transform: none!important;
+    position: initial!important;
+}
 img, object, embed {
     height: 100% !important;
 }
@@ -18,7 +22,7 @@ img, object, embed {
 }
 
 .home-page i.demo-icon {
-    font-size: 34px;
+    font-size: 50px;
 }
 
 .home-page span.box-title {
@@ -28,20 +32,39 @@ img, object, embed {
     left: 0!important;
 }
 
-.home-page .showMenu.hamburger  {
-    height: 33px;
-    border: 5px solid #7F1F18;
-    width: 33px;
-    position: relative;
-    display: inline-block;
-    border-radius: 100%;
-    text-align: center;
+.home-page i.fa-bars {
+    border-color: #7F1F18;
+    max-width: 32px;
+    max-height: 32px;
+    justify-content: center;
+    display: flex;
+}
+
+.home-page i.fa-bars:before {
+    color:#7F1F18;
 }
 
 .home-page .showMenu i.demo-icon {
     color: #7F1F18;
     font-size: 16px;
     margin: auto;
+}
+
+.home-page .copyright {
+    color:#7F1F18;
+    margin-bottom: 10px;
+} 
+
+h1.site-name a {
+    color: #7F1F18!important; 
+    font-weight: 600;
+}
+
+.home-page .bar-btn {
+    display: grid;
+    justify-content: flex-end;
+    align-items: flex-end;
+
 }
 
 .dots-archive-solid:before{

@@ -96,10 +96,9 @@
   height: 100%;
   top: 0;
   right: 0;
-  width: 240px;
+  width: 220px!important;
   z-index: 1000;
   transition: all 0.3s ease 0s;
-  width: 332px;
   background: none repeat scroll 0 0 #7F1F18;
   position: fixed;
   padding: 0;
@@ -163,12 +162,10 @@
 }
 .vertical-menu .menu-list li i {
   display: inline-block;
-  min-width: 28px;
-  width: 41px;
-  margin-right: 11px;
+  margin-right: 14px;
   text-align: center;
   background: white;
-  padding: 11px;
+  padding: 5px 6px;
   box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3) inset;
   border-radius: 4px;
   color: #7F1F18;
@@ -240,9 +237,11 @@
   padding-right: 10px;
 }
 .languague-toolbar .flag-icon {
-display: flex;
-padding-right: 10px;
-padding-left: 10px;
+  display: flex;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 8px;
+  padding-top: 8px;
 }
 /*------------------------- Home page ---------------------*/
 .row.metro-panel {
