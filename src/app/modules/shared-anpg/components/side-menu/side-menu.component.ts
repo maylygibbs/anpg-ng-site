@@ -17,9 +17,9 @@ export class SideMenuComponent extends BaseComponent implements OnInit {
   public items = new Array<MenuItem>();
   private $items: Subscription;
 
-  constructor(private menuService: MenuService,
+  constructor(protected menuService: MenuService,
     protected translateService: TranslateService) { 
-      super(translateService)
+      super(menuService,translateService)
   }
 
   ngOnInit(): void {

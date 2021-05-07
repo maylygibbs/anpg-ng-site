@@ -1,8 +1,10 @@
 import { TranslateService } from "@ngx-translate/core";
+import { MenuService } from "src/app/core/services/menu.service";
 
 export class BaseComponent{
 
-    constructor(protected translateService: TranslateService){ }
+    constructor(protected menuService: MenuService,
+      protected translateService: TranslateService){ }
 
     encryptParam(param:any):string{
         return btoa(param);
@@ -12,8 +14,10 @@ export class BaseComponent{
    * 
    * @param language 
    */
-   languageChange(language:string) {
-    this.translateService.use(language);
+   languageChange(languageFile:string, language: string) {
+     this.menuService.getHomeItemMenu(language);
+     this.menuService.getSideItemMenu(language);
+     this.translateService.use(languageFile);
   }
 
 }
