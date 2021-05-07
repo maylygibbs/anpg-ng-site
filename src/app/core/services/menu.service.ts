@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { MenuItem } from '../models/menu-item';
@@ -71,6 +71,8 @@ export class MenuService extends HttpService {
         }
         this.setHomeMenu(options);
        return options; 
+    }).catch((error:HttpErrorResponse)=>{
+      return null;
     });
   }
 
@@ -99,6 +101,8 @@ export class MenuService extends HttpService {
         }
         this.setSideMenu(options);
        return options; 
+    }).catch((error:HttpErrorResponse)=>{
+      return null;
     });
   }
 

@@ -4,6 +4,7 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
+    browserDisconnectTimeout: 1000000,
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
@@ -18,6 +19,11 @@ module.exports = function (config) {
         // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
         // for example, you can disable the random execution with `random: false`
         // or set a specific seed with `seed: 4321`
+        random: true,
+        seed: '4321',
+        oneFailurePerSpec: true,
+        failFast: true,
+        timeoutInterval: 1000000
       },
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },

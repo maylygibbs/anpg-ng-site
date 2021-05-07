@@ -1,48 +1,73 @@
 import { TestBed } from '@angular/core/testing';
 import { MenuItem } from '../models/menu-item';
 import { MenuService } from './menu.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpHeaderInterceptor } from '../interceptors/http-header.interceptor';
 
 describe('MenuService', () => {
-  let originalTimeout: number;
   let service: MenuService;
   let httpClient: HttpClient;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientModule ]
+      imports: [HttpClientModule],
+      providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },]
     });
     service = TestBed.inject(MenuService);
     httpClient = TestBed.inject(HttpClient);
-    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
+
   });
 
-  afterEach(function() {
-    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+  afterEach(function () {
+
   });
 
   it('deve ser criado', () => {
     expect(service).toBeTruthy();
   });
 
-  it('#getHomeItemMenu deve ser uma lista não vazia',
+  it('Service #getHomeItemMenu deve retornar nulo, quando eu passo um idioma não configurado. Exemplo espanhol, es.',
     (done: DoneFn) => {
-    return service.getHomeItemMenu(20).then(value => {
-      expect(value.length).toBeGreaterThan(0);
+      return service.getHomeItemMenu('es').then(value => {
+        expect(value).toEqual(null);
+      }).finally(done);
+    });
 
-    }).catch(error =>{
-      expect(error.statusText).toContain('Access Denied');
-
-    }).finally(done);
-  });
-
-
- /* it('#getHomeItemMenu should return Array<MenuItem>',
+  it('Service #getHomeItemMenu deve ser uma lista nao vazia, quando eu passo um idioma configurado, portugues pt',
     (done: DoneFn) => {
-      service.getHomeItemMenu(20).then(value => {
-        expect(value).toBe(Array<MenuItem>());
-        done();
-      });
-    }); */
+      return service.getHomeItemMenu('pt').then(value => {
+        expect(value.length).toBeGreaterThan(0);
+      }).finally(done);
+    });
+
+  it('Service #getHomeItemMenu deve ser uma lista nao vazia, quando eu passo um idioma configurado, ingles en',
+    (done: DoneFn) => {
+      return service.getHomeItemMenu('en').then(value => {
+        expect(value.length).toBeGreaterThan(0);
+      }).finally(done);
+    });
+
+
+  it('Service #getSideItemMenu deve retornar nulo, quando eu passo um idioma não configurado. Exemplo espanhol, es.',
+    (done: DoneFn) => {
+      return service.getSideItemMenu('es').then(value => {
+        expect(value).toEqual(null);
+      }).finally(done);
+    });
+
+  it('Service #getSideItemMenu deve ser uma lista nao vazia, quando eu passo um idioma configurado, portugues pt',
+    (done: DoneFn) => {
+      return service.getSideItemMenu('pt').then(value => {
+        expect(value.length).toBeGreaterThan(0);
+      }).finally(done);
+    });
+
+  it('Service #getSideItemMenu deve ser uma lista nao vazia, quando eu passo um idioma configurado, ingles en',
+    (done: DoneFn) => {
+      return service.getSideItemMenu('en').then(value => {
+        expect(value.length).toBeGreaterThan(0);
+      }).finally(done);
+    });
+
+
 });
