@@ -3,43 +3,43 @@
     "title":"[EN] Plataform"
   },
   "pacotes_dados": {
-    "title":"Data Packs"
+    "title":"[EN] Data Packs"
   },
   "pacotes_dados_detalhe": {
-    "title":"Data Pack",
+    "title":"[EN] Data Pack",
     "bacia":{
-      "title": "Bacia",
-      "label_doc": "Title"
+      "title": "[EN] Bacia",
+      "label_doc": "[EN] Title"
      },
      "bloco":{
-      "title": "Bloco",
-      "label_doc": "Title"
+      "title": "[EN] Block",
+      "label_doc": "[EN] Title"
      },
      "poco":{
-      "title": "Poco",
-      "label_doc": "Title"
+      "title": "[EN] Pozo",
+      "label_doc": "[EN] Title"
      }
   },
   "sobre_os_dados": {
-    "title":"About the Data"
+    "title":"[EN] About the Data"
   },
   "gestao_de_dados":{
-    "title":"Data Management"
+    "title":"[EN] Data Management"
   },
   "redep":{
-    "title":"REDEP"
+    "title":"[EN] REDEP"
   },
   "vdr":{
-    "title":"VDR"
+    "title":"[EN] VDR"
   },
   "dados_publicos":{
-    "title":"Public Information"
+    "title":"[EN] Public Information"
   },
   "faqs":{
-    "title":"FAQS"
+    "title":"[EN] FAQS"
   },
   "contacto":{
-    "title":"Contact"
+    "title":"[EN] Contact"
   }
 
 

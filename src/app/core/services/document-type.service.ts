@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpService } from './http.service';
@@ -55,6 +55,8 @@ export class DocumentTypeService extends HttpService {
         }
         this.setDocumentTypes(options);
        return options; 
+    }).catch((error:HttpErrorResponse)=>{
+      return null;
     });
   }
 

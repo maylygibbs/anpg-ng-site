@@ -51,7 +51,7 @@ export class PacotedadosService extends HttpService {
    * Servicio que permite devolver detalle de un pacote de dados dado id
    * @param id 
    */
-  getPacoteById(id: number): Promise<Array<PacoteDados>> {
+  getPacoteById(id: number): Promise<PacoteDados> {
     let pacotes = new Array<PacoteDados>();
     return this.get(environment.api_pacotesdados.url, `/pacotes/${id}`).toPromise().then(
       (resp) => {
@@ -325,11 +325,11 @@ export class PacotedadosService extends HttpService {
 
           return pacote;
         })
-        return pacotes;
+        return pacotes[0];
       }
     ).catch((error) => {
       console.log(error)
-      return pacotes;
+      return null;
     });
   }
 }

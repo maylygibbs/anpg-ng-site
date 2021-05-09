@@ -39,13 +39,12 @@ export class PacoteDadosDetalhesComponent implements OnInit {
     this.item$ = this.documentTypeService.getDocumentTypes().subscribe(
       (items:Array<TipoDocumento>)=>{
         this.documentTypes = items;
-        console.log('type',this.documentTypes)
       }
     );
 
-    this.pacotesDadosService.getPacoteById(1).then(
+    this.pacotesDadosService.getPacoteById(this.pacoteId).then(
       (resp:any) => {
-        this.pacote = resp[0];
+        this.pacote = resp;
         console.log(resp);
         this.spinner.hide();
       }

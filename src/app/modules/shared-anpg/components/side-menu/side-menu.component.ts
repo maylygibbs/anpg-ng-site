@@ -23,6 +23,10 @@ export class SideMenuComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getMenu();
+  }
+
+  getMenu(){
     this.$items = this.menuService.getSideMenu().subscribe((items)=>{
       this.items = items;
     });

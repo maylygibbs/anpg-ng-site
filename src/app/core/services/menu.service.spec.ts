@@ -18,11 +18,7 @@ describe('MenuService', () => {
 
   });
 
-  afterEach(function () {
-
-  });
-
-  it('deve ser criado', () => {
+  it('Deve ser criado', () => {
     expect(service).toBeTruthy();
   });
 
@@ -71,3 +67,5 @@ describe('MenuService', () => {
 
 
 });
+
+

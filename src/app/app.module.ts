@@ -15,11 +15,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
-
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
