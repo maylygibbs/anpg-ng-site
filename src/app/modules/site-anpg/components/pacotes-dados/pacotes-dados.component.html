@@ -8,7 +8,7 @@
         </div>
         <div class="col-lg-2 col-md-4 col-sm-12 p-0 mt-3 columns menu-button">
             <a class="showMenu" routerLink="/"><i class="fa-arrow-left fa icon-x back"></i></a>
-            <a class="showMenu"><i class="fa-bars fa icon-x back"></i></a>  
+            <a class="showMenu displayMenu"><i class="fa-bars fa icon-x back"></i></a>  
         </div>
     </div>
     <div class="row clear-fix div-continer">
@@ -25,7 +25,7 @@
                                 <div class="post-body">
                                     <h2><a [routerLink]="['/anpg/pacote',pacote.encryptIdentity]">{{pacote.nomePacote}}</a></h2>
                                     <p class="wrapper-text-list-pacote">{{pacote.descricaoPacote}}</p>
-                                    <a class="text-primary text-left font-weight-normal ">Ver mais</a>
+                                    <a class="text-primary text-left font-weight-normal" [routerLink]="['/anpg/pacote',pacote.encryptIdentity]">Ver mais</a>
                                 </div>
                               
                             </article>
