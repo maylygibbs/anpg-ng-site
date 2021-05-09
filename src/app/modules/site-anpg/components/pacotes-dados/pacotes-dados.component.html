@@ -1,18 +1,14 @@
 <app-spinner></app-spinner>
 <section class="page-section Blog-page page-section-41 page-section-current">
-    <div class="row menu-row div-continer">
-        <div class="large-1 go-back">
-            <i class="fa-arrow-left fa icon-x back" routerLink="/"></i>
-        </div>
-        <div class="large-7 columns p-l-0 content-title">
+    <div class="row menu-row div-continer mb-4">
+        <div class="col-lg-10 col-md-8 col-sm-12 p-0 mt-3 content-title">
             <h1 class="site-name" translate>
                 pacotes_dados.title
             </h1>
         </div>
-        <div class="large-4 columns menu-button text-right">
-            <a class="showMenu" routerLink="/"><i class="fa-home fa icon-x back"></i></a>
-            <a class="showMenu"><i class="fa-bars fa icon-x back"></i></a>
-            <a class="showMenu"><i class="fa-search fa icon-x back"></i></a>
+        <div class="col-lg-2 col-md-4 col-sm-12 p-0 mt-3 columns menu-button">
+            <a class="showMenu" routerLink="/"><i class="fa-arrow-left fa icon-x back"></i></a>
+            <a class="showMenu"><i class="fa-bars fa icon-x back"></i></a>  
         </div>
     </div>
     <div class="row clear-fix div-continer">
@@ -29,7 +25,9 @@
                                 <div class="post-body">
                                     <h2><a [routerLink]="['/anpg/pacote',pacote.encryptIdentity]">{{pacote.nomePacote}}</a></h2>
                                     <p class="wrapper-text-list-pacote">{{pacote.descricaoPacote}}</p>
+                                    <a class="text-primary text-left font-weight-normal ">Ver mais</a>
                                 </div>
+                              
                             </article>
                         </li>
                     </ul>

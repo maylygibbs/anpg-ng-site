@@ -25,3 +25,27 @@
     }
     @include ellipsis-multiline(15,1.5,4,0);
   }
+
+  .page-section-41 .site-name {
+    font-weight: 600;
+  }
+  .page-section-41  .post-body {
+    background-color: white;
+  }
+  .page-section-41  .post-body h2 {
+    margin-top: 10px;  
+   }
+  .page-section-41  .post-body a {
+   color: #000000;
+   font-weight: 600; 
+  }
+  .page-section-41 .blog-page article {
+    border:none
+  }
+  .page-section-41 .showMenu {
+    color: #7F1F18!important
+  }
+
+  .page-section-41 .menu-button {
+    text-align: right;
+  }
