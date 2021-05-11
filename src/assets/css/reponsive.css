@@ -1,7 +1,8 @@
 
 @media only screen and (max-width: 768px) {
   
-  body .site-name {
+  body .site-name,
+  body .project-title {
     font-size: 2em;
     text-align: center;
   } 

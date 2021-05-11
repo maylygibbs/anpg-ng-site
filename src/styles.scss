@@ -37,7 +37,7 @@ router-outlet ~ * {
     width: 100%;
   }
 /* Global styles for texts*/
-p,span,a,h1,h2,h3,h4,h5,h6,small {
+p,span,a,h1,h2,h3,h4,h5,h6,small,th,td {
   font-family: 'franklin-gothic';
   font-weight: 400;
 }

@@ -85,3 +85,9 @@
 #spaces-main .showMenu a {
 	color: #ffffff;
 }
+
+table thead tr th {
+	background-color:#7F1F18 ;
+	color: white;
+	font-weight: 600;
+}

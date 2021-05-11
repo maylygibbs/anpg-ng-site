@@ -13,17 +13,15 @@ ng-image-slider ::ng-deep {
 
 .project-images {
     img {
-        height: 489px;
-        width: 367px;
+        height: 100%;
+        width:100%;
         left: 294px;
         top: 406px;
         border-radius: 10px;
         
     }
 }
-#content {
-    height: 500px;
-}
+
 .scrollable-content {
     width: 100%;
     height: 95%;
@@ -42,9 +40,10 @@ ng-image-slider ::ng-deep {
 .project-info {
     background: #ffffff;
     margin: 20px 0;
-    top: 40px;
     padding: 20px 20px 30px;
     position: relative;
+    border-radius: 6px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .page-section-57 {
@@ -53,34 +52,41 @@ ng-image-slider ::ng-deep {
 
 .project-title {
     color: black;
-    font-family: Franklin Gothic Medium;
-    font-size: 64px;
+    font-size: 21px;
     font-style: normal;
-    font-weight: 400;
+    font-weight:600;
     line-height: 73px;
     letter-spacing: 0em;
-    text-align: center;
 
 }
 
-
-
 p {
     text-align: justify !important;
-    font-family: Franklin Gothic Book;
     color: black;
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 26px;
     letter-spacing: 0em;
     text-align: left;
 }
 
 .pricing-table .description {
     background-color: rgba(255, 255, 255, 0.9) !important;
-
     text-align: justify !important;
-
     font-size: 0.8em !important;
 }
+
+.page-section-57 .site-name{
+  font-weight: 600;
+  color: #000000;
+}
+
+.page-section-57 .showMenu{
+  color: #7F1F18!important
+}
+
+.page-section-57 .menu-button {
+  text-align: right;
+}
+
