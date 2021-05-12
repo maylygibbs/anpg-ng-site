@@ -7,17 +7,18 @@
   },
   "pacotes_dados_detalhe": {
     "title":"Pacote de Dados",
+    "documento":"Documento",
     "bacia":{
       "title": "Bacia",
-      "label_doc": "Titulo"
+      "label_doc": "Documento"
      },
      "bloco":{
       "title": "Bloco",
-      "label_doc": "Titulo"
+      "label_doc": "Documento"
      },
      "poco":{
       "title": "Poco",
-      "label_doc": "Titulo"
+      "label_doc": "Documento"
      }
   },
   "sobre_os_dados": {

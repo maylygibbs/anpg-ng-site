@@ -7,17 +7,18 @@
   },
   "pacotes_dados_detalhe": {
     "title":"[EN] Data Pack",
+    "documento":"[EN] Document",
     "bacia":{
       "title": "[EN] Bacia",
-      "label_doc": "[EN] Title"
+      "label_doc": "[EN] Document"
      },
      "bloco":{
       "title": "[EN] Block",
-      "label_doc": "[EN] Title"
+      "label_doc": "[EN] Document"
      },
      "poco":{
       "title": "[EN] Pozo",
-      "label_doc": "[EN] Title"
+      "label_doc": "[EN] Document"
      }
   },
   "sobre_os_dados": {
