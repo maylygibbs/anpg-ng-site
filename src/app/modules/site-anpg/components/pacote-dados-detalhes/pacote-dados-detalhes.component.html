@@ -12,7 +12,7 @@
    </div>
    <div class="row clear-fix div-continer">
       <!-- PORTFOLIO PACOTE DE DADOS -->
-      <div class="row portfolio-page">
+      <div class="row portfolio-page w-100">
          <!-- PORTFOLIO PACOTE DE DADOS MENU -->
          <div *ngIf="pacote" style="width: 100%; min-height: 139px; text-align:center; padding:3px; margin-bottom:40px">
             <ng-image-slider [images]="pacote.groupDocumentsTypes" [infinite]="false" [autoSlide]="1"
@@ -74,10 +74,10 @@
                         <tbody>
                            <tr *ngFor="let bacia of pacote.bacias">
                               <td>{{bacia.nomeBacia}}</td>
-                              <td colspan="2">
-                                 <table style="color:black">
+                              <td colspan="2" class="m-0 p-0">
+                                 <table style="color:black" class="inner-table">
                                     <tr *ngFor="let bloco of bacia.blocos">
-                                       <td>{{bloco.nomeBloco}}</td>
+                                       <td width="120">{{bloco.nomeBloco}}</td>
                                        <td>
                                           <ul>
                                              <li style="color:black" *ngFor="let poco of bloco.pocos">{{poco.nomePoco}}
@@ -208,7 +208,7 @@
                         <div class="row">
                            <div class="large-12 columns">
 
-                              <table class="table table-striped" style="color:black">
+                              <table class="table " style="color:black">
                                  <thead>
                                     <tr>
                                        <th scope="col" translate> pacotes_dados_detalhe.bloco.title </th>
@@ -219,9 +219,9 @@
                                  <tbody>
                                     <tr *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
                                        <td *ngIf="thisBlocoHasDocuments(bloco)">{{bloco.nomeBloco}}</td>
-                                       <td colspan="2" *ngIf="thisBlocoHasDocuments(bloco)">
+                                       <td colspan="2" *ngIf="thisBlocoHasDocuments(bloco)" class="p-0 m-0">
 
-                                          <table style="color:black">
+                                          <table style="color:black" class="inner-table">
                                              <tr *ngFor="let poco of bloco.pocos">
                                                 <td *ngIf="poco.documentos"> {{poco.nomePoco}}</td>
                                                 <td *ngIf="poco.documentos">

@@ -44,3 +44,50 @@ p,span,a,h1,h2,h3,h4,h5,h6,small,th,td {
 a:hover {
   text-decoration: none;
 }
+
+/* Table styles*/
+table td a {
+  color: #000
+}
+table ul {
+  list-style: none;
+}
+table,
+.table {
+  border: 1px solid #000;
+}
+table td,
+.table td {
+  border: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+table thead tr th {
+	background-color:#7F1F18 ;
+	color: white;
+	font-weight: 600;
+  border-bottom: 1px solid black!important;
+  border-top: 1px solid black!important;
+}
+
+table.inner-table {
+  margin-bottom: 0;
+  border: 0;
+  width: 100%;
+  & tr td{
+    border-top: 0;
+    
+  }
+  & tr td:first-of-type{
+    border-left: 0;
+    
+  }
+  & tr td:last-of-type{
+    border-right: 0;
+    
+  }
+  & tr:last-of-type td {
+    border-bottom: 0;
+    max-width: 20px;
+  }
+}

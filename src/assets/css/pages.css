@@ -228,10 +228,13 @@ article.type-post .field-name-field-blog-tags .links > li a {
 
 /*-------------- Portfolio Page ----------------------*/
 .project-info {
-  background: rgba(0, 0, 0, 0.1);
+  background:white;
   margin: 20px;
   padding: 30px;
   position: relative;
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  width: 100%;
 }
 #project-info .back {
   cursor: pointer;
@@ -244,6 +247,7 @@ article.type-post .field-name-field-blog-tags .links > li a {
   top: 16px;
   width: 38px;
   z-index: 133;
+  
 }
 li.portfolio-item {
   padding: 0 17px 25px;
