@@ -5,6 +5,10 @@ ng-image-slider ::ng-deep {
         .main-inner {
             height: 180px !important;
         }
+        .caption.ng-star-inserted{
+            background-image: linear-gradient(to right,rgba(127, 31, 24, 0.9),rgba(127, 31, 24,.9),rgba(127, 31, 24,.9),rgba(127, 31, 24,.9),rgba(127, 31, 24,.9)) !important;
+        }
+
     }
 }
 .portfolio-page-menu {
