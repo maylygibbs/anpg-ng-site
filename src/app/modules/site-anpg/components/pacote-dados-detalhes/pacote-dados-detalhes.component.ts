@@ -1,3 +1,4 @@
+import { environment } from './../../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -8,6 +9,7 @@ import { TipoDocumento } from '../../../../core/models/tipo-documento';
 import { PacoteDados } from '../../../../core/models/pacote-dados';
 import { DocumentTypeService } from '../../../../core/services/document-type.service';
 import { PacotedadosService } from '../../../../core/services/pacotedados.service';
+
 
 @Component({
   selector: 'app-pacote-dados-detalhes',
@@ -22,6 +24,7 @@ export class PacoteDadosDetalhesComponent implements OnInit {
   public documentTypes: Array<TipoDocumento>;
   public groupDocumentsSelected: GrupoDocumento;
   private item$:Subscription;
+  public env: any;
 
   constructor(
     private pacotesDadosService: PacotedadosService,
@@ -35,6 +38,7 @@ export class PacoteDadosDetalhesComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.env = environment;
     this.spinner.show();
     this.item$ = this.documentTypeService.getDocumentTypes().subscribe(
       (items:Array<TipoDocumento>)=>{

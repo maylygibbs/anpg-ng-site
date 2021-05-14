@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   appId:1100,
+  appSiteDomain:'https://anpg-ng-site.azurewebsites.net',
+  appPlataformaPacoteDomain:'https://anpg-ng-plataforma.azurewebsites.net',
   social_networks: {
     twitter : '#',
     facebook : '#',

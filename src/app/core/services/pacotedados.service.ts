@@ -316,8 +316,8 @@ export class PacotedadosService extends HttpService {
 
             pacote.groupDocumentsTypes.unshift(
               {
-                image: 'assets/images/0.png',
-                thumbImage: 'assets/images/0.png',
+                image: 'assets/images/0.jpg',
+                thumbImage: 'assets/images/0.jpg',
                 title: 'Informação básica',
                 alt: 'Informação básica'
               })

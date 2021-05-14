@@ -14,14 +14,12 @@
       <!-- PORTFOLIO PACOTE DE DADOS -->
       <div class="row portfolio-page w-100">
          <!-- PORTFOLIO PACOTE DE DADOS MENU -->
-         <div *ngIf="pacote" style="width: 100%; min-height: 139px; text-align:center; padding:3px; margin-bottom:40px">
+         <div *ngIf="pacote" style="width: 100%; min-height: 139px; text-align:center; padding:0px; margin-bottom:0px">
             <ng-image-slider [images]="pacote.groupDocumentsTypes" [infinite]="false" [autoSlide]="1"
-               [imageSize]="{width: '170px', height:'179px'}" (imageClick)="showSectionDocuments($event)"
+               [imageSize]="{width: '200px', height:'179px'}" (imageClick)="showSectionDocuments($event)"
                [imagePopup]='false' slideImage="1" #nav></ng-image-slider>
          </div>
-         <ul class="small-block-grid-1 large-block-grid-5 portfolio-page-menu">
-         </ul>
-         <div *ngIf="sectionIndex==0">
+         <div *ngIf="sectionIndex==0" class="content-pacote">
             <div class="project-info">
 
                <!--INFORMACION BASICA -->
@@ -70,7 +68,7 @@
                                  <th scope="col" translate>pacotes_dados_detalhe.poco.title</th>
                               </tr>
                            </thead>
-                           <tbody>
+                           <tbody class="tbody-content">
                               <tr *ngFor="let bloco of bacia.blocos">
                                  <td>{{bloco.nomeBloco}}</td>
                                  <td class="m-0 p-0">
@@ -124,9 +122,9 @@
                                        <th scope="col" translate>pacotes_dados_detalhe.documento</th>
                                     </tr>
                                  </thead>
-                                 <tbody>
+                                 <tbody class="tbody-content">
                                     <tr *ngFor="let doc of groupDocumentsSelected.documentos">
-                                       <td><a href="/">{{doc.nomeDoc}}
+                                       <td><a target="_blank" [href]="env.appPlataformaPacoteDomain">{{doc.nomeDoc}}
                                           </a></td>
                                     </tr>
                                  </tbody>
@@ -147,13 +145,13 @@
                                        <th scope="col" translate>pacotes_dados_detalhe.bacia.label_doc</th>
                                     </tr>
                                  </thead>
-                                 <tbody>
+                                 <tbody class="tbody-content">
                                     <tr *ngFor="let bacia of groupDocumentsSelected.pacoteBacias">
                                        <td width="30%" *ngIf="bacia.documentos">{{bacia.nomeBacia}}</td>
                                        <td *ngIf="bacia.documentos">
                                           <ul>
                                              <li *ngFor="let doc of bacia.documentos">
-                                                <a href="/">{{doc.nomeDoc}}
+                                                <a target="_blank" [href]="env.appPlataformaPacoteDomain">{{doc.nomeDoc}}
                                                 </a>
                                              </li>
                                           </ul>
@@ -178,13 +176,13 @@
                                        <th scope="col" translate>pacotes_dados_detalhe.bloco.label_doc</th>
                                     </tr>
                                  </thead>
-                                 <tbody>
+                                 <tbody class="tbody-content">
                                     <tr *ngFor="let bloco of groupDocumentsSelected.pacoteBlocos">
                                        <td width="30%" *ngIf="bloco.documentos">{{bloco.nomeBloco}}</td>
                                        <td *ngIf="bloco.documentos">
                                           <ul>
                                              <li *ngFor="let doc of bloco.documentos">
-                                                <a href="/">{{doc.nomeDoc}}
+                                                <a target="_blank" [href]="env.appPlataformaPacoteDomain">{{doc.nomeDoc}}
                                                 </a>
                                              </li>
                                           </ul>
@@ -209,7 +207,7 @@
                                        <th scope="col" translate> pacotes_dados_detalhe.bloco.label_doc </th>
                                     </tr>
                                  </thead>
-                                 <tbody>
+                                 <tbody class="tbody-content">
                                     <tr *ngFor="let bloco of groupDocumentsSelected.pacotePocos">
                                        <td width="30%" *ngIf="thisBlocoHasDocuments(bloco)">{{bloco.nomeBloco}}</td>
                                        <td colspan="2" *ngIf="thisBlocoHasDocuments(bloco)" class="p-0 m-0">
@@ -220,7 +218,7 @@
                                                 <td *ngIf="poco.documentos">
                                                    <ul>
                                                       <li *ngFor="let doc of poco.documentos">
-                                                         <a href="/"> {{doc.nomeDoc}}</a>
+                                                         <a target="_blank" [href]="env.appPlataformaPacoteDomain"> {{doc.nomeDoc}}</a>
                                                       </li>
                                                    </ul>
                                                 </td>
@@ -237,8 +235,6 @@
                </div>
             </div>
          </div>
-
-
       </div>
       <!-- END PORTFOLIO/> -->
    </div>
