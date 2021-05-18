@@ -414,16 +414,11 @@ button:hover,
 }
 
 
-
-
-
-
-
 .metro-panel .blog-box.featured  > div {
   background: #FCA325;
 }  
 .featured.blog-box .featured-box-title {
-  background: rgba(255, 154, 0, 0.9);
+  background-image: linear-gradient(to right,rgba(0, 0, 0, 0.8),rgba(0, 0, 0,.8),rgba(0, 0, 0,.8),rgba(0, 0, 0,.8),rgba(0,0,0,.8)) !important;
 }
 
 
