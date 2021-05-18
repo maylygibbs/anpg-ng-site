@@ -11,10 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { EmconstrucaoComponent } from './components/emconstrucao/emconstrucao.component';
 
 
 @NgModule({
-  declarations: [UiSiteAnpgLayoutComponent, SideMenuComponent, FooterComponent, SpinnerComponent],
+  declarations: [UiSiteAnpgLayoutComponent, SideMenuComponent, FooterComponent, SpinnerComponent, EmconstrucaoComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -38,7 +39,8 @@ import { HttpClient } from '@angular/common/http';
     SpinnerComponent, 
     NgImageSliderModule, 
     NgbModule,
-    TranslateModule
+    TranslateModule,
+    EmconstrucaoComponent
   ]
 })
 export class SharedAnpgModule { }

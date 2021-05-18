@@ -1,3 +1,4 @@
+import { RedepComponent } from './components/redep/redep.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UiSiteAnpgLayoutComponent } from '../shared-anpg/layouts/ui-site-anpg-layout/ui-site-anpg-layout.component';
@@ -34,6 +35,11 @@ const routes: Routes = [
         path: 'pacote/:id',
         component: PacoteDadosDetalhesComponent,
         data: {state: 'pacotesdetailhes'}
+      },
+      {
+        path: 'redep',
+        component: RedepComponent,
+        data: {state: 'redep'}
       }
     ]
   },
