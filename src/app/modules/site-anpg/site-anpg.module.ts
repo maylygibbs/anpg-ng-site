@@ -8,6 +8,7 @@ import { SharedAnpgModule } from '../shared-anpg/shared-anpg.module';
 import { PacoteDadosDetalhesComponent } from './components/pacote-dados-detalhes/pacote-dados-detalhes.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RedepComponent } from './components/redep/redep.component';
+import { GestaoDadosComponent } from './components/gestao-dados/gestao-dados.component';
 
 /** Module site publico Plataforma Dados E&P */
 @NgModule({
@@ -15,7 +16,7 @@ import { RedepComponent } from './components/redep/redep.component';
     HomeComponent, 
     AboutComponent, 
     PacotesDadosComponent, 
-    PacoteDadosDetalhesComponent, ErrorComponent, RedepComponent],
+    PacoteDadosDetalhesComponent, ErrorComponent, RedepComponent, GestaoDadosComponent],
   imports: [
     CommonModule,
     SharedAnpgModule,

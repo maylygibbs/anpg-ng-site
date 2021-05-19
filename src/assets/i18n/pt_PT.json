@@ -41,6 +41,15 @@
   },
   "contacto":{
     "title":"Contacto"
+  },
+  "pesquisa":{
+    "title":"PESQUISA"
+  },
+  "gestao":{
+    "title":"GESTÃO"
+  },
+  "bi":{
+    "title":"BI"
   }
 
 

@@ -41,6 +41,15 @@
   },
   "contacto":{
     "title":"[EN] Contact"
+  },
+  "pesquisa":{
+    "title":"[EN] RESEARCH"
+  },
+  "gestao":{
+    "title":"[EN] MANAGEMENT"
+  },
+  "bi":{
+    "title":"[EN] BI"
   }
 
 
