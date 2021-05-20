@@ -41,7 +41,7 @@
                            <br />
                            <i class='demo-icon anpg icon-tasks-solid'></i>
                         </a>
-                        <a *ngIf="!items[1].href.includes('http')" routerLink="/anpg/gestao-dados">
+                        <a *ngIf="!items[1].href.includes('http')" [routerLink]="items[1].href">
                            <span class='box-title'>{{items[1].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-tasks-solid'></i>
@@ -93,12 +93,12 @@
                <div class="row">
                   <div class='six small-6 columns contact-box space'>
                      <div class='color-5' [style]="'background:'+items[4].background">
-                        <a *ngIf="items[4].href.includes('http')" [href]="items[4].href" target="_blank">
+                        <a *ngIf="items[4].href.includes('http')" [routerLink]="items[4].href" target="_blank">
                            <span class='box-title'>{{items[4].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-flag-solid'></i>
                         </a>
-                        <a *ngIf="!items[4].href.includes('http')" href="/anpg/redep">
+                        <a *ngIf="!items[4].href.includes('http')" [routerLink]="items[4].href">
                            <span class='box-title'>{{items[4].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-flag-solid'></i>
@@ -160,7 +160,7 @@
                      <div class='color-4' [style]="'background:'+items[3].background"> <span
                            class='box-title anim'>{{items[3].label}}</span>
                         <span class='featured-image'>
-                           <img width="400" height="400" src="assets/images/relog.jpeg" alt="some tile" />
+                           <img width="400" height="400" src="assets/images/Imagem-Relógio-01.png" alt="some tile" />
                         </span>
                         <span class='featured-box-title'>
                            <a href='#'>Atribuição de Concessões Petrolíferas
