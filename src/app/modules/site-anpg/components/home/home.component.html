@@ -31,7 +31,7 @@
                            <span class='box-title'>{{items[0].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-database-solid'></i>
-                        </a>                        
+                        </a>
                      </div>
                   </div>
                   <div class='six small-6 columns contact-box space'>
@@ -45,7 +45,7 @@
                            <span class='box-title'>{{items[1].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-tasks-solid'></i>
-                        </a> 
+                        </a>
                      </div>
                   </div>
                   <div class="twelve large-12 columns space work-box big">
@@ -67,8 +67,7 @@
                               </li>
                               <li>
                                  <a href="#">
-                                    <img width="400" height="400" src="assets/images/Home_Image_3.jpg"
-                                       alt="1a2n0Ck" />
+                                    <img width="400" height="400" src="assets/images/Home_Image_3.jpg" alt="1a2n0Ck" />
                                  </a>
                               </li>
                               <li>
@@ -102,7 +101,7 @@
                            <span class='box-title'>{{items[4].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-flag-solid'></i>
-                        </a> 
+                        </a>
                      </div>
                   </div>
                   <div class='six small-6 columns contact-box space'>
@@ -112,7 +111,7 @@
                            <br />
                            <i class='demo-icon anpg icon-map-marker-alt-solid'></i>
                         </a>
-                        <a *ngIf="!items[5].href.includes('http')" [href]="items[5].href">
+                        <a *ngIf="!items[5].href.includes('http')" [routerLink]="items[5].href">
                            <span class='box-title'>{{items[5].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-map-marker-alt-solid'></i>
@@ -157,13 +156,19 @@
                      </div>
                   </div>
                   <div class='twelve large-12 columns space featured blog-box medium'>
-                     <div class='color-4' [style]="'background:'+items[3].background"> <span
-                           class='box-title anim'>{{items[3].label}}</span>
+                     <div class='color-4' [style]="'background:'+items[3].background">
+
+                        <span class='box-title anim'></span>
                         <span class='featured-image'>
-                           <img width="400" height="400" src="assets/images/Imagem-Relógio-01.png" alt="some tile" />
+                           <img *ngIf="items[3].href.includes('http')" [href]="items[3].href"  width="400" height="400" src="assets/images/Imagem-Relógio2.0.png" alt="some tile" />
+                           <img *ngIf="!items[3].href.includes('http')" [routerLink]="items[3].href" width="400" height="400" src="assets/images/Imagem-Relógio2.0.png" alt="some tile" />
                         </span>
                         <span class='featured-box-title'>
-                           <a href='#'>Atribuição de Concessões Petrolíferas
+                           <a *ngIf="items[3].href.includes('http')" [href]="items[3].href" target="_blank">Atribuição
+                              de Concessões Petrolíferas
+                              09 de Junho de 2021 - Submissão das Propostas</a>
+                           <a *ngIf="!items[3].href.includes('http')" [routerLink]="items[3].href" target="_blank">Atribuição
+                              de Concessões Petrolíferas
                               09 de Junho de 2021 - Submissão das Propostas</a>
                         </span>
                      </div>
@@ -206,12 +211,12 @@
                   </div>
                   <div class='six small-6 columns contact-box space'>
                      <div class='color-10' [style]="'background:'+items[8].background">
-                        <a *ngIf="items[8].href.includes('http')" [routerLink]="items[8].href" target="_blank"> 
+                        <a *ngIf="items[8].href.includes('http')" [routerLink]="items[8].href" target="_blank">
                            <span class='box-title'>{{items[8].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-users-solid'></i>
                         </a>
-                        <a *ngIf="!items[8].href.includes('http')" [routerLink]="items[8].href"> 
+                        <a *ngIf="!items[8].href.includes('http')" [routerLink]="items[8].href">
                            <span class='box-title'>{{items[8].label}}</span>
                            <br />
                            <i class='demo-icon anpg icon-users-solid'></i>
