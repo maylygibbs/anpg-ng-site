@@ -33,24 +33,29 @@
   color: white;
   .color-9 {
     text-align: center;
-    height: 368px;
-    width: 388px;
+    min-height: 250px;
     left: 0px;
     top: 0px;
     border-radius: 10px;
     padding: 45px 10px 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .box-title {
+      position: inherit;
+    }
   }
 }
 
 .Blog-page i.demo-icon {
   font-family: Franklin Gothic Demi;
-  font-size: 110px;
+  font-size: 70px;
   color: white !important;
 }
 
 .Blog-page span.box-title {
-  font-family: Franklin Gothic Demi;
-  font-size: 35px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 900;
   line-height: 54px;
