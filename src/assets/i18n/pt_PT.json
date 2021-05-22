@@ -22,7 +22,16 @@
      }
   },
   "sobre_os_dados": {
-    "title":"Sobre os Dados"
+    "title":"Sobre os Dados",
+    "subtitle1":"Sobre nós",
+    "subtitle2":"Mais Informações",
+    "missao":"Missão",
+    "visao":"Visão",
+    "valores":"Valores",
+    "objectivos-estrategicos":"Objectivos estratégicos",
+    "responsabilidade-social":"Responsabilidade Social",
+    "ambiente-Segurançca":"Ambiente e Segurança"
+
   },
   "gestao_de_dados":{
     "title":"Gestão de Dados"

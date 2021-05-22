@@ -22,7 +22,15 @@
      }
   },
   "sobre_os_dados": {
-    "title":"[EN] About the Data"
+    "title":"[EN] About the Data",    
+    "subtitle1":"[EN] About us",
+    "subtitle2":"[EN] More information",
+    "missao":"[EN] Mission",
+    "visao":"[EN] Vision",
+    "valores":"[EN] Values",
+    "objectivos-estrategicos":"[EN] Objectivos estratégicos",
+    "responsabilidade-social":"[EN] Responsabilidade Social",
+    "ambiente-Segurançca":"[EN] Ambiente e Segurança"
   },
   "gestao_de_dados":{
     "title":"[EN] Data Management"
