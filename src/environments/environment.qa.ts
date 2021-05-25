@@ -1,8 +1,8 @@
 export const environment = {
   production: true,
   appId:1100,
-  appSiteDomain:'https://anpg-ng-site.azurewebsites.net',
-  appPlataformaPacoteDomain:'https://anpg-ng-plataforma.azurewebsites.net',
+  appSiteDomain:'https://iona-dev.azurewebsites.net',
+  appPlataformaPacoteDomain:'https://iona-dev.azurewebsites.net',
   social_networks: {
     twitter : '#',
     facebook : '#',
