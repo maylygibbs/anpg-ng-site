@@ -45,8 +45,8 @@ export class PacoteDadosDetalhesComponent implements OnInit {
         this.documentTypes = items;
       }
     );
-
-    this.pacotesDadosService.getPacoteById(this.pacoteId).then(
+      //TODO: cambiar por this.pacoteId
+    this.pacotesDadosService.getPacoteById(1).then(
       (resp:any) => {
         this.pacote = resp;
         console.log(resp);

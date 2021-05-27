@@ -1,24 +1,121 @@
 .page-section-41 .site-name {
-    font-weight: 600;
-    color: #000000;
-  }
-  .page-section-41  .post-body {
-    background-color: white;
-  }
-  .page-section-41  .post-body h2 {
-    margin-top: 10px;  
-   }
-  .page-section-41  .post-body a {
-   color: #000000;
-   font-weight: 600; 
-  }
-  .page-section-41 .blog-page article {
-    border:none
-  }
-  .page-section-41 .showMenu{
-    color: #7F1F18!important
+  font-weight: 600;
+  color: #000000;
+}
+.page-section-41 .post-body {
+  background-color: white;
+}
+.page-section-41 .post-body h2 {
+  margin-top: 10px;
+}
+.page-section-41 .post-body a {
+  color: #000000;
+  font-weight: 600;
+}
+.page-section-41 .blog-page article {
+  border: none;
+}
+.page-section-41 .showMenu {
+  color: #7f1f18 !important;
+}
+
+.page-section-41 .menu-button {
+  text-align: right;
+}
+
+.blog-page {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  font-size: 14px !important;
+  font-family: Franklin Gothic Book !important;  
+}
+
+::ng-deep ngb-accordion {
+
+ 
+  button:focus, .button:focus {
+    color: #7f1f18;
+    background-color:#ffffff !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    border: none !important;
+    outline-style: none !important;
+
   }
 
-  .page-section-41 .menu-button{
-    text-align: right;
+  .btn-link,
+  .btn-link.collapsed {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    color: #7f1f18;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    border-left: 3px solid #7f1f18 !important;
+
   }
+  .btn-link:hover {
+    text-align: left;
+    width: 100%;
+    font-weight: 600;
+    text-decoration: none !important;
+    background-color:#ffffff !important;
+    border-left: 3px solid #7f1f18 !important;
+
+  }
+  
+
+}
+
+// collapse toggle
+::ng-deep .collapse {
+  transition: max-height .55s, opacity .35s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  display: block !important;
+
+  &.show {
+    max-height: 100rem;
+    opacity: 1;
+  }
+}
+
+::ng-deep .accordion {
+  .card {
+    margin-bottom: 0 !important;
+    border-bottom: 0px solid rgba(0, 0, 0, .04) !important;
+
+    .card-header {
+      padding: 0;
+
+      button {
+        padding: 1.2rem;
+        width: 100%;
+
+        span {
+          float: left;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 1.2rem;
+    }
+  }
+}
+
+::ng-deep  .accordion-shadow .card.open {
+  border-radius: 0.571rem;
+  margin: 10px 0;
+  border: 0;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0 !important;
+  overflow: hidden !important;
+}

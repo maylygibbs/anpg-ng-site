@@ -30,6 +30,10 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
 /* style for animation enter pages*/
 router-outlet ~ * {
     position: absolute;
@@ -92,3 +96,5 @@ table.inner-table {
     max-width: 20px;
   }
 }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

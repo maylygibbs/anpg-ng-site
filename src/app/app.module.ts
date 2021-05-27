@@ -12,6 +12,7 @@ import { documentTypeProviderFactory, homeMenuProviderFactory, sideMenuProviderF
 import { DocumentTypeService } from './core/services/document-type.service';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -33,7 +34,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         },
         deps: [ HttpClient ]
       }
-    })
+    }),
+    NgbModule
 
   ],
   providers: [

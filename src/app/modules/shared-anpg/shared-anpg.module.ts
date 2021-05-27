@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAccordionModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
@@ -22,6 +22,7 @@ import { EmconstrucaoComponent } from './components/emconstrucao/emconstrucao.co
     NgxSpinnerModule,
     NgImageSliderModule,
     NgbModule,
+    NgbAccordionModule,
     TranslateModule.forChild({
       loader:{
         provide: TranslateLoader,
@@ -40,7 +41,8 @@ import { EmconstrucaoComponent } from './components/emconstrucao/emconstrucao.co
     NgImageSliderModule, 
     NgbModule,
     TranslateModule,
-    EmconstrucaoComponent
+    EmconstrucaoComponent,
+    NgbAccordionModule
   ]
 })
 export class SharedAnpgModule { }
