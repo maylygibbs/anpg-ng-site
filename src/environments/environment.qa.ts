@@ -26,6 +26,10 @@ export const environment = {
       }
     }
   },
+  language:{
+    pt:'pt',
+    en:'en'
+  },
   api_pacotesdados: {
     url: 'https://anpgwebapi.azure-api.net/api',
     suscription: '068d5be69cda47bdba0268ab32becf33'

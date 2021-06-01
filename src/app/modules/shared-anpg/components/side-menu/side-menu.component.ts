@@ -1,3 +1,4 @@
+import { LanguageService } from './../../../../core/services/language.service';
 import { BaseComponent } from './../base.component';
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
@@ -18,8 +19,8 @@ export class SideMenuComponent extends BaseComponent implements OnInit {
   private $items: Subscription;
 
   constructor(protected menuService: MenuService,
-    protected translateService: TranslateService) { 
-      super(menuService,translateService)
+    protected languageService:LanguageService) { 
+      super(menuService,languageService)
   }
 
   ngOnInit(): void {

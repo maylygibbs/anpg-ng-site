@@ -54,6 +54,8 @@ export class MenuService extends HttpService {
    */
   getHomeItemMenu(lenguage:string):Promise<Array<MenuItem>>{
     let options:Array<MenuItem>;
+    
+    //return this.get('https://anpgwebapishared.azurewebsites.net/api',`/shared/menu/${environment.appId}/center`).toPromise().then(
     return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/center`).toPromise().then(
       (resp:any)=>{ 
         
