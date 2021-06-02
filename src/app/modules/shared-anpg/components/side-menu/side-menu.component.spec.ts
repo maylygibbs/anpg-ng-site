@@ -1,3 +1,4 @@
+import { LanguageService } from './../../../../core/services/language.service';
 import { MenuItem } from 'src/app/core/models/menu-item';
 import { MenuService } from './../../../../core/services/menu.service';
 import { HttpHeaderInterceptor } from './../../../../core/interceptors/http-header.interceptor';
@@ -5,18 +6,18 @@ import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common
 import { ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 import { SideMenuComponent } from './side-menu.component';
 
-import { TranslateModule } from '@ngx-translate/core';
-
 import { RouterTestingModule } from '@angular/router/testing';
 import { SiteAnpgModule } from '../../../../modules/site-anpg/site-anpg.module';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
   let fixture: ComponentFixture<SideMenuComponent>;
-  let httpClient: HttpClient;
+  let serviceLanguage: LanguageService;
   let menuService: MenuService;
   let menu:any[];
 
@@ -27,6 +28,15 @@ describe('SideMenuComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
+        TranslateModule.forRoot({
+          loader:{
+            provide: TranslateLoader,
+            useFactory: (http: HttpClient)=>{
+              return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+            },
+            deps: [ HttpClient ]
+          }
+        }),
         RouterTestingModule.withRoutes([
           { path: '', redirectTo: '/anpg/home', pathMatch:'full' },
           {
@@ -37,12 +47,14 @@ describe('SideMenuComponent', () => {
         TranslateModule.forRoot()],
       providers: [
         { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },
+        LanguageService
       ]
 
     })
       .compileComponents();
-    httpClient = TestBed.inject(HttpClient);
+
     menuService = TestBed.inject(MenuService);
+    serviceLanguage = TestBed.inject(LanguageService);
   });
 
   beforeEach(() => {
@@ -56,8 +68,8 @@ describe('SideMenuComponent', () => {
   });
 
    it('Deve por padrão carregar as opções do menu lateral em português.', (done: DoneFn) => {
-     
-     return menuService.getSideItemMenu('pt').then((items:Array<MenuItem>) => {
+     serviceLanguage.setLanguage('pt_PT','pt');
+     return menuService.getSideItemMenu().then((items:Array<MenuItem>) => {
        component.items =items;      
        fixture.detectChanges();
        let listOption = fixture.debugElement.nativeElement.querySelectorAll('li');

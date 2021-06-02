@@ -1,3 +1,4 @@
+import { LanguageService } from './../../../../core/services/language.service';
 import { MenuItem } from 'src/app/core/models/menu-item';
 import { MenuService } from './../../../../core/services/menu.service';
 import { HttpHeaderInterceptor } from './../../../../core/interceptors/http-header.interceptor';
@@ -5,17 +6,16 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SiteAnpgModule } from '../../../../modules/site-anpg/site-anpg.module';
-
 import { HomeComponent } from './home.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  let httpClient: HttpClient;
   let menuService: MenuService;
-  let translateService: TranslateService
+  let serviceLanguage: LanguageService;
 
   let menu:any[];
 
@@ -25,6 +25,15 @@ describe('HomeComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
+        TranslateModule.forRoot({
+          loader:{
+            provide: TranslateLoader,
+            useFactory: (http: HttpClient)=>{
+              return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+            },
+            deps: [ HttpClient ]
+          }
+        }),
         RouterTestingModule.withRoutes([
           { path: '', redirectTo: '/anpg/home', pathMatch:'full' },
           {
@@ -35,12 +44,12 @@ describe('HomeComponent', () => {
         TranslateModule.forRoot()],
       providers: [
         { provide: HTTP_INTERCEPTORS, useClass: HttpHeaderInterceptor, multi: true },
+        LanguageService
       ]
     })
     .compileComponents();
-    httpClient = TestBed.inject(HttpClient);
     menuService = TestBed.inject(MenuService);
-    translateService = TestBed.inject(TranslateService);
+    serviceLanguage = TestBed.inject(LanguageService);
   });
 
   beforeEach(() => {
@@ -54,8 +63,8 @@ describe('HomeComponent', () => {
   });
 
   it('Deve por padrão carregar as opções do home em português.', (done: DoneFn) => {
-     
-    return menuService.getHomeItemMenu('pt').then((items:Array<MenuItem>) => {
+    serviceLanguage.setLanguage('pt_PT','pt');
+    return menuService.getHomeItemMenu().then((items:Array<MenuItem>) => {
 
       component.items =items;      
       fixture.detectChanges();
@@ -68,8 +77,8 @@ describe('HomeComponent', () => {
   });
 
   it('Deve por padrão carregar as opções do home em inglês.', (done: DoneFn) => {
-     
-    return menuService.getHomeItemMenu('en').then((items:Array<MenuItem>) => {
+    serviceLanguage.setLanguage('en_US','en'); 
+    return menuService.getHomeItemMenu().then((items:Array<MenuItem>) => {
 
       component.items =items;      
       fixture.detectChanges();

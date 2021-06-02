@@ -1,3 +1,4 @@
+import { LanguageService } from './../../../../core/services/language.service';
 import { PacoteDados } from 'src/app/core/models/pacote-dados';
 import { PacotedadosService } from './../../../../core/services/pacotedados.service';
 import { HttpHeaderInterceptor } from './../../../../core/interceptors/http-header.interceptor';
@@ -5,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 import { SiteAnpgModule } from '../../../../modules/site-anpg/site-anpg.module';
 
 import { PacoteDadosDetalhesComponent } from './pacote-dados-detalhes.component';
@@ -13,13 +14,14 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 describe('PacoteDadosDetalhesComponent', () => {
   let component: PacoteDadosDetalhesComponent;
   let fixture: ComponentFixture<PacoteDadosDetalhesComponent>;
-  let httpClient: HttpClient;
   let pacotedadosService: PacotedadosService;
-  let translateService: TranslateService
+  let serviceLanguage: LanguageService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,6 +31,15 @@ describe('PacoteDadosDetalhesComponent', () => {
         HttpClientModule,
         NgxSpinnerModule,
         NgImageSliderModule,
+        TranslateModule.forRoot({
+          loader:{
+            provide: TranslateLoader,
+            useFactory: (http: HttpClient)=>{
+              return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+            },
+            deps: [ HttpClient ]
+          }
+        }),
         RouterTestingModule.withRoutes([
           { path: '', redirectTo: '/anpg/home', pathMatch:'full' },
           {
@@ -44,13 +55,13 @@ describe('PacoteDadosDetalhesComponent', () => {
           useValue: {
             params: of({id: btoa('1')})
           }
-        }  
+        },
+        LanguageService 
       ]
     })
     .compileComponents();
-    httpClient = TestBed.inject(HttpClient);
     pacotedadosService = TestBed.inject(PacotedadosService);
-    translateService = TestBed.inject(TranslateService);
+    serviceLanguage = TestBed.inject(LanguageService);
   });
 
   beforeEach(() => {
@@ -63,7 +74,8 @@ describe('PacoteDadosDetalhesComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Deve carregar um pacote de dados de acordo com seu id.', (done: DoneFn) => {     
+  it('Deve carregar um pacote de dados de acordo com seu id.', (done: DoneFn) => {  
+    serviceLanguage.setLanguage('pt_PT','pt');   
     return pacotedadosService.getPacoteById(1).then((pacote:PacoteDados) => {
       component.pacote = pacote;      
       fixture.detectChanges();
