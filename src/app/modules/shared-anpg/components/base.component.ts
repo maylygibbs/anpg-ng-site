@@ -17,8 +17,8 @@ export class BaseComponent{
    */
    languageChange(languageFile:string, language: string) {
      this.languageService.setLanguage(languageFile,language);
-     this.menuService.getHomeItemMenu(language);
-     this.menuService.getSideItemMenu(language);
+     this.menuService.getHomeItemMenu();
+     this.menuService.getSideItemMenu();
   }
 
 }

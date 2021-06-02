@@ -4,15 +4,15 @@ import { MenuService } from "../services/menu.service";
 
 export function homeMenuProviderFactory(
     menuService:MenuService){
-    return () => menuService.getHomeItemMenu(environment.language.pt);
+    return () => menuService.getHomeItemMenu();
 }
 
 export function sideMenuProviderFactory(
     menuService:MenuService){
-    return () => menuService.getSideItemMenu(environment.language.pt);
+    return () => menuService.getSideItemMenu();
 }
 
 export function documentTypeProviderFactory(
     socumentTypeService:DocumentTypeService){
-    return () => socumentTypeService.getAllDocumentTypes(environment.language.pt);
+    return () => socumentTypeService.getAllDocumentTypes();
 }

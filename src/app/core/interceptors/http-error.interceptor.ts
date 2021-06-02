@@ -18,11 +18,15 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log('HttpErrorInterceptor','interceptado');
     return next.handle(request).pipe(catchError( (error:HttpErrorResponse)=>{  
- 
-      if (error.status === 404) {
-        this.router.navigate(['/anpg/error']);
+      console.log('error',error)
+      if (error.status === 401 || error.status === 401 || error.status === 404 /*|| error.status === 500*/) {
+        this.router.navigate(['/anpg/error', {errorCode:error.status, errorMessage:error.statusText}]);
+      }
+      if (error.status === 0) {
+        this.router.navigate(['/anpg/error', {errorCode:error.status, errorMessage:'Ocorreu um erro.'} ]);
       }
       return throwError(error);
+
 
     }));
   }

@@ -18,7 +18,7 @@ export class FaqsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    this.faqsService.getAllFaqs('pt').then((resp:Array<Faq>)=>{
+    this.faqsService.getAllFaqs().then((resp:Array<Faq>)=>{
       this.faqs = resp;
       this.spinner.hide();
     })

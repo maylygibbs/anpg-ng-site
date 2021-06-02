@@ -49,14 +49,13 @@ export class MenuService extends HttpService {
 
   /**
    * get home menu items from services
-   * @param lenguage 
    * @param location 
    */
-  getHomeItemMenu(lenguage:string):Promise<Array<MenuItem>>{
+  getHomeItemMenu():Promise<Array<MenuItem>>{
     let options:Array<MenuItem>;
     
-    //return this.get('https://anpgwebapishared.azurewebsites.net/api',`/shared/menu/${environment.appId}/center`).toPromise().then(
-    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/center`).toPromise().then(
+    //return this.get('https://anpgwebapishared.azurewebsites.net/api',`/MenuManage/${environment.appId}/center`).toPromise().then(
+    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/center`).toPromise().then(
       (resp:any)=>{ 
         
         if(resp && resp.length>0){
@@ -80,12 +79,11 @@ export class MenuService extends HttpService {
 
     /**
    * get home menu items from services
-   * @param lenguage 
    * @param location 
    */
-  getSideItemMenu(lenguage:string):Promise<Array<MenuItem>>{
+  getSideItemMenu():Promise<Array<MenuItem>>{
     let options:Array<MenuItem>;
-    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/${lenguage}/side`).toPromise().then(
+    return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/side`).toPromise().then(
       (resp:any)=>{ 
         
         if(resp && resp.length>0){

@@ -35,11 +35,11 @@ export class DocumentTypeService extends HttpService {
 
   /**
    * get all document types from services
-   * @param lenguage 
+   * 
    */
-  getAllDocumentTypes(lenguage:string):Promise<Array<TipoDocumento>>{
+  getAllDocumentTypes():Promise<Array<TipoDocumento>>{
     let options:Array<TipoDocumento>;
-    return this.get(environment.api_pacotesdados.url,`/shared/DocumentType/${lenguage}`).toPromise().then(
+    return this.get(environment.api_pacotesdados.url,`/shared/DocumentType`).toPromise().then(
       (resp:any)=>{ 
         
         if(resp && resp.length>0){
@@ -56,7 +56,7 @@ export class DocumentTypeService extends HttpService {
         this.setDocumentTypes(options);
        return options; 
     }).catch((error:HttpErrorResponse)=>{
-      return null;
+      return options;
     });
   }
 

@@ -18,7 +18,7 @@ export class HttpHeaderInterceptor implements HttpInterceptor {
     request = request.clone({
       setHeaders: {
         'Ocp-Apim-Subscription-Key': '068d5be69cda47bdba0268ab32becf33',
-        'Accept-Language': this.languageService.currentLanguage
+        'AcceptLanguage': this.languageService.currentLanguage
       }
     });
     return next.handle(request);

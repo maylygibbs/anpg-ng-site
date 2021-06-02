@@ -18,9 +18,9 @@ export class FaqsService extends HttpService {
  * @param lenguage 
  * @returns 
  */
-  getAllFaqs(lenguage:string):Promise<Array<Faq>>{
+  getAllFaqs():Promise<Array<Faq>>{
     let faqs:Array<Faq>;
-    return this.get(environment.api_pacotesdados.url,`/shared/faq/all/${lenguage}`).toPromise().then((resp:any)=>{
+    return this.get(environment.api_pacotesdados.url,`/shared/faq/all`).toPromise().then((resp:any)=>{
       faqs = resp[0].data.Faq.map((item:any)=>{
         let faq = new Faq(item.IdFaq);
         faq.ambito = item.Ambito;
