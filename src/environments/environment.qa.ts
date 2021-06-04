@@ -31,7 +31,7 @@ export const environment = {
     en:'en'
   },
   api_pacotesdados: {
-    url: 'https://anpgwebapi.azure-api.net/api',
+    url: 'https://anpg-gad-web-api.azure-api.net/api',
     suscription: '6afa798139be44538c405c6257de77d7'
   }
 };
