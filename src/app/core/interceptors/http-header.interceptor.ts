@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LanguageService } from '../services/language.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class HttpHeaderInterceptor implements HttpInterceptor {
@@ -17,7 +18,7 @@ export class HttpHeaderInterceptor implements HttpInterceptor {
     console.log('HttpHeaderInterceptor','interceptado');
     request = request.clone({
       setHeaders: {
-        'Ocp-Apim-Subscription-Key': '068d5be69cda47bdba0268ab32becf33',
+        'Ocp-Apim-Subscription-Key': environment.api_pacotesdados.suscription,
         'AcceptLanguage': this.languageService.currentLanguage
       }
     });

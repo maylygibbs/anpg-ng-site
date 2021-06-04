@@ -38,7 +38,7 @@ export class DocumentTypeService extends HttpService {
    * 
    */
   getAllDocumentTypes():Promise<Array<TipoDocumento>>{
-    let options:Array<TipoDocumento>;
+    let options:Array<TipoDocumento> = null;
     return this.get(environment.api_pacotesdados.url,`/shared/DocumentType`).toPromise().then(
       (resp:any)=>{ 
         

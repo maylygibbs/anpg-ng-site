@@ -52,7 +52,7 @@ export class MenuService extends HttpService {
    * @param location 
    */
   getHomeItemMenu():Promise<Array<MenuItem>>{
-    let options:Array<MenuItem>;
+    let options:Array<MenuItem> = null;
     
     //return this.get('https://anpgwebapishared.azurewebsites.net/api',`/MenuManage/${environment.appId}/center`).toPromise().then(
     return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/center`).toPromise().then(
@@ -73,7 +73,7 @@ export class MenuService extends HttpService {
         this.setHomeMenu(options);
        return options; 
     }).catch((error:HttpErrorResponse)=>{
-      return null;
+      return options;
     });
   }
 
@@ -82,7 +82,7 @@ export class MenuService extends HttpService {
    * @param location 
    */
   getSideItemMenu():Promise<Array<MenuItem>>{
-    let options:Array<MenuItem>;
+    let options:Array<MenuItem> = null;
     return this.get(environment.api_pacotesdados.url,`/shared/menu/${environment.appId}/side`).toPromise().then(
       (resp:any)=>{ 
         
@@ -102,7 +102,7 @@ export class MenuService extends HttpService {
         this.setSideMenu(options);
        return options; 
     }).catch((error:HttpErrorResponse)=>{
-      return null;
+      return options;
     });
   }
 
