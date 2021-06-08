@@ -34,7 +34,7 @@ export class PacotedadosService extends HttpService {
             item.IdPacote,
             item.NomePacote,
             item.DescricaoPacote,
-            this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${item.ImagemPacote}`),
+            item.ImagemPacote ? this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${item.ImagemPacote}`): '/assets/images/image_icon-3.png',
             item.Observacoes,
             item.Onshore);
           return pacote;

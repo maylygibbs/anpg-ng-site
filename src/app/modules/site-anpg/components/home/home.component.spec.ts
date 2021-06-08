@@ -65,7 +65,7 @@ describe('HomeComponent', () => {
   it('Deve por padrão carregar as opções do home em português.', (done: DoneFn) => {
     serviceLanguage.setLanguage('pt_PT','pt');
     return menuService.getHomeItemMenu().then((items:Array<MenuItem>) => {
-
+      console.log(items)
       component.items =items;      
       fixture.detectChanges();
       let listOption = fixture.debugElement.nativeElement.querySelectorAll('.box-title');
